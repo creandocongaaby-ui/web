@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gracias · Creando con Gaaby</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#75052F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600&display=swap">
+<style>
+:root{--vino:#75052F;--vino-2:#4E0320;--rosa:#FFA6C8;--rosa-cl:#FECEE0;--rosa-xcl:#FFF1F6;--crema:#FEFCF9;--papel:#FFFFFF}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--rosa-xcl);color:var(--vino);font-family:'Poppins',system-ui,sans-serif;line-height:1.6}
+header{background:var(--vino);padding:12px 24px;display:flex;justify-content:center}
+header img{height:56px;width:auto;display:block}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 20px}
+.tarjeta{position:relative;background:var(--papel);border-radius:24px;max-width:560px;width:100%;padding:72px 32px 36px;text-align:center;box-shadow:0 18px 40px rgba(117,5,47,.14)}
+.foto{position:absolute;left:50%;top:-70px;transform:translateX(-50%);width:120px;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 0 0;border:6px solid var(--papel);box-shadow:0 10px 24px rgba(117,5,47,.2)}
+.mano{font-family:'Caveat',cursive;font-weight:700;font-size:28px;display:block;margin-top:6px}
+h1{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,44px);line-height:1.08;margin:6px 0 14px}
+h1 em{background:linear-gradient(transparent 62%,var(--rosa-cl) 62%);padding:0 .08em}
+p{margin:0 0 12px;font-size:17px}
+.orden{display:inline-block;background:var(--rosa-xcl);border-radius:8px;padding:6px 12px;font-size:14px;margin:4px 0 18px;word-break:break-all}
+.acciones{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:10px;background:var(--vino);color:var(--crema);font-weight:600;text-decoration:none;border:1.5px solid var(--vino)}
+.btn:hover{background:var(--vino-2)}
+.btn--linea{background:transparent;color:var(--vino)}
+.btn--linea:hover{background:var(--vino);color:var(--crema)}
+:focus-visible{outline:3px solid var(--rosa);outline-offset:3px}
+</style>
+</head>
+<body>
+<header><a href="/" aria-label="Volver a Creando con Gaaby"><img src="img/logo.png" alt="Creando con Gaaby" width="1023" height="447"></a></header>
+<main>
+  <div class="tarjeta">
+    <img class="foto" src="img/gaby-sonrisa.jpg" alt="Gaby sonriendo">
+    <span class="mano" id="saludo">gracias por confiar en mí</span>
+    <h1 id="titulo">Recibí tu <em>pago</em></h1>
+    <div id="texto"><p>Ya casi está todo listo.</p></div>
+    <span class="orden" id="orden" hidden></span>
+    <div class="acciones" id="acciones"></div>
+  </div>
+</main>
+<script>
+(function(){
+  // Cambia este enlace por tu link de Calendly cuando lo tengas.
+  var CALENDLY = '';
+  var WA = 'https://wa.me/573208944328?text=';
+  var q = new URLSearchParams(location.search);
+  var producto = q.get('producto') || '';
+  var estado = (q.get('bold-tx-status') || '').toLowerCase();
+  var orden = q.get('bold-order-id') || '';
+  var nombres = { clase: 'la clase Notion para mentes creativas', plantilla: 'la plantilla de contenido', sesion: 'tu sesión 1:1' };
+  var nombre = nombres[producto] || 'tu compra';
+  var titulo = document.getElementById('titulo'), texto = document.getElementById('texto'), acciones = document.getElementById('acciones'), saludo = document.getElementById('saludo');
+  if (orden) { var o = document.getElementById('orden'); o.textContent = 'Orden: ' + orden; o.hidden = false; }
+  function boton(txt, href, linea) { var a = document.createElement('a'); a.className = 'btn' + (linea ? ' btn--linea' : ''); a.href = href; a.textContent = txt; acciones.appendChild(a); }
+  function wa(msg) { return WA + encodeURIComponent(msg + (orden ? ' Mi orden es ' + orden + '.' : '')); }
+
+  if (estado === 'rejected' || estado === 'failed') {
+    saludo.textContent = 'no pasa nada, lo intentamos de nuevo';
+    titulo.innerHTML = 'No se pudo completar el <em>pago</em>';
+    texto.innerHTML = '<p>Tu pago de ' + nombre + ' no se aprobó. Puedes intentarlo otra vez o escribirme y te ayudo.</p>';
+    boton('Volver a intentarlo', producto === 'sesion' ? '/#servicios' : '/#recursos');
+    boton('Escríbeme por WhatsApp', wa('Hola Gaby, intenté pagar ' + nombre + ' y no se aprobó.'), true);
+  } else if (estado === 'pending' || estado === 'processing') {
+    saludo.textContent = 'un momentito';
+    titulo.innerHTML = 'Tu pago está en <em>proceso</em>';
+    texto.innerHTML = '<p>Apenas se confirme el pago de ' + nombre + ', te escribo. Si tienes dudas, escríbeme por WhatsApp.</p>';
+    boton('Escríbeme por WhatsApp', wa('Hola Gaby, mi pago de ' + nombre + ' quedó en proceso.'));
+  } else if (producto === 'sesion') {
+    titulo.innerHTML = 'Tu sesión está <em>pagada</em>';
+    texto.innerHTML = '<p>Ahora elige el día y la hora que mejor te quede.</p>';
+    if (CALENDLY) { boton('Elegir mi horario', CALENDLY); boton('Escríbeme por WhatsApp', wa('Hola Gaby, ya pagué mi sesión 1:1.'), true); }
+    else { boton('Agendar por WhatsApp', wa('Hola Gaby, ya pagué mi sesión 1:1 y quiero agendar.')); }
+  } else {
+    titulo.innerHTML = 'Gracias por tu <em>compra</em>';
+    texto.innerHTML = '<p>Escríbeme por WhatsApp con tu número de orden y te envío el acceso a ' + nombre + '.</p>';
+    boton('Recibir mi acceso', wa('Hola Gaby, ya pagué ' + nombre + ' y quiero mi acceso.'));
+  }
+  boton('Volver a la página', '/', true);
+})();
+</script>
+</body>
+</html>

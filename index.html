@@ -174,6 +174,8 @@ p{margin:0}
 .servicios__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:stretch}
 .serv{position:relative;border:1.5px solid var(--vino);border-radius:28px;padding:40px 30px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
 .serv--rosa{background:var(--rosa-cl)}.serv--oliva{background:var(--salvia)}.serv--arena{background:var(--crema-2)}
+.serv__nota{font-size:14px}
+.btn[aria-busy="true"]{opacity:.7;pointer-events:none}
 .serv__precio{font-family:var(--serif);font-size:40px;line-height:1}.serv__precio small{font-family:var(--sans);font-size:14px;font-weight:500}
 .serv--onda{border:none;border-radius:0;
   -webkit-mask:radial-gradient(18px at 0 50%,#0000 97%,#000) 0 50%/51% 36px repeat-y,radial-gradient(18px at 100% 50%,#0000 97%,#000) 100% 50%/51% 36px repeat-y;
@@ -254,6 +256,7 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
 .contacto a:hover span{text-decoration:underline}
 .footer__base{border-top:1px solid rgba(243,238,231,.2);margin-top:48px;padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--rosa-cl)}
 </style>
+<script src="https://checkout.bold.co/library/boldPaymentButton.js" defer></script>
 </head>
 <body>
 
@@ -447,7 +450,8 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
         <p>Una sesión para ordenar ese tema que te está quitando tiempo: tu contenido, tu Notion o tus procesos.</p>
         <ul><li>Videollamada conmigo</li><li>Sales con un plan de acción claro</li></ul>
         <span class="serv__precio">150 <small>USD</small></span>
-        <a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20reservar%20una%20sesi%C3%B3n%201%3A1">Reservar mi sesión</a>
+        <p class="serv__nota">Pagas tu sesión y luego eliges el día y la hora.</p>
+        <a class="btn" data-pagar="sesion" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20reservar%20una%20sesi%C3%B3n%201%3A1">Reservar mi sesión</a>
       </article>
     </div>
   </div>
@@ -487,7 +491,7 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
         <div class="recurso__img"><img src="img/notion-clase.jpg" alt="Página de la clase Tu primer sistema de Notion con las secciones Espacio Personal, Recursos y Clase Grabada" loading="lazy"></div>
         <div class="recurso__info">
           <div><span class="label">Clase</span><h3>Notion para mentes creativas</h3><p class="recurso__desc">Aprende a usar Notion desde lo básico y arma tu primer sistema.</p><p class="recurso__desc">Incluye:</p><ul class="incluye"><li>Clase grabada</li><li>Recursos</li><li>Espacio personal en Notion</li></ul></div>
-          <div class="recurso__compra"><span class="precio">25 <small>USD</small></span><a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20la%20clase%20Notion%20para%20mentes%20creativas">Quiero la clase</a></div>
+          <div class="recurso__compra"><span class="precio">25 <small>USD</small></span><a class="btn" data-pagar="clase" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20la%20clase%20Notion%20para%20mentes%20creativas">Quiero la clase</a></div>
         </div>
       </article>
       <article class="recurso recurso--oliva">
@@ -495,7 +499,7 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
         <div class="recurso__info">
           <div><span class="label">Plantilla de Notion</span><h3>Plantilla de contenido</h3><p class="recurso__desc">Incluye:</p>
             <ul class="incluye"><li>Calendario de contenido</li><li>Tabla de planificación con tema, CTA y estado</li><li>Pilares de contenido</li><li>Banco de ideas</li><li>Vista de tu feed de Instagram</li></ul></div>
-          <div class="recurso__compra"><span class="precio">15 <small>USD</small></span><a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20la%20plantilla%20de%20contenido%20en%20Notion">Quiero la plantilla</a></div>
+          <div class="recurso__compra"><span class="precio">15 <small>USD</small></span><a class="btn" data-pagar="plantilla" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20la%20plantilla%20de%20contenido%20en%20Notion">Quiero la plantilla</a></div>
         </div>
       </article>
     </div>
@@ -534,6 +538,29 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
 
 <script>
 (function(){
+  // Pagos con Bold: pide la firma al servidor y abre la pasarela.
+  // Si algo falla, el botón sigue funcionando como enlace a WhatsApp.
+  document.querySelectorAll('[data-pagar]').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      if(typeof window.BoldCheckout==='undefined') return;
+      e.preventDefault();
+      var producto=btn.getAttribute('data-pagar'), texto=btn.textContent, wa=btn.href;
+      btn.setAttribute('aria-busy','true'); btn.textContent='Abriendo pago...';
+      fetch('/api/bold-firma?producto='+encodeURIComponent(producto),{cache:'no-store'})
+        .then(function(r){ if(!r.ok) throw new Error('sin firma'); return r.json(); })
+        .then(function(d){
+          var checkout=new window.BoldCheckout({
+            orderId:d.orderId, currency:d.currency, amount:d.amount, apiKey:d.apiKey,
+            integritySignature:d.signature, description:d.description,
+            redirectionUrl:location.origin+'/gracias.html?producto='+producto
+          });
+          checkout.open();
+        })
+        .catch(function(){ window.location.href=wa; })
+        .finally(function(){ setTimeout(function(){ btn.removeAttribute('aria-busy'); btn.textContent=texto; },2500); });
+    });
+  });
+
   document.querySelectorAll('[data-carrusel]').forEach(function(c){
     var pista=c.querySelector('.carrusel__pista'), slides=[].slice.call(pista.children), puntos=c.querySelector('[data-puntos]');
     slides.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ir al ejemplo '+(i+1));b.addEventListener('click',function(){ir(i)});puntos.appendChild(b)});
