@@ -83,6 +83,7 @@ p{margin:0}
 .polaroid img{width:100%;aspect-ratio:1/1;object-fit:cover}
 .polaroid span{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--mano);font-weight:700;font-size:20px;color:var(--vino)}
 .collage .polaroid{left:-2%;bottom:2%;width:36%;transform:rotate(-8deg)}
+.collage .polaroid span{white-space:nowrap;font-size:clamp(13px,1.9vw,20px)}
 .washi{position:absolute;height:26px;width:46%;left:27%;top:-13px;background:repeating-linear-gradient(45deg,rgba(255,166,200,.85) 0 9px,rgba(254,206,224,.85) 9px 18px);clip-path:polygon(0 8%,4% 0,8% 10%,12% 0,100% 0,96% 14%,100% 30%,96% 46%,100% 62%,96% 78%,100% 100%,0 100%,4% 82%,0 64%,4% 46%,0 28%)}
 .ventana{position:absolute;right:-3%;bottom:6%;width:50%;background:var(--papel);border-radius:12px;box-shadow:0 18px 36px rgba(117,5,47,.2);overflow:hidden;transform:rotate(4deg);border:1.5px solid rgba(117,5,47,.12)}
 .ventana__barra{display:flex;gap:5px;padding:8px 10px;background:var(--crema-2)}
@@ -91,7 +92,8 @@ p{margin:0}
 .parche{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center}
 .parche--diez{right:4%;top:2%;width:22%;aspect-ratio:1;border-radius:50%;background:var(--rosa-cl);box-shadow:0 5px 0 #F2A9C4,0 12px 18px rgba(117,5,47,.22);transform:rotate(-10deg);font-family:var(--serif);font-size:clamp(20px,2.6vw,30px);line-height:1}
 .parche--diez::after{content:"";position:absolute;inset:8%;border-radius:50%;border:2.5px dashed rgba(117,5,47,.45)}
-.parche--diez small{display:block;font-family:var(--sans);font-size:.45em;font-weight:600}
+.parche--diez div{font-size:.72em;text-align:center}
+.parche--diez small{display:block;font-family:var(--sans);font-size:.5em;font-weight:600;margin-bottom:3px}
 .parche--brillo{left:0;top:4%;width:17%;filter:drop-shadow(0 3px 0 #D97FA3) drop-shadow(0 8px 8px rgba(117,5,47,.25))}
 .parche--corazon{left:44%;bottom:-2%;width:15%;transform:rotate(8deg);filter:drop-shadow(0 4px 0 #4E0320) drop-shadow(0 10px 10px rgba(117,5,47,.25))}
 .nota-mano{position:absolute;right:2%;top:30%;font-family:var(--mano);font-weight:700;font-size:clamp(18px,2vw,24px);color:var(--vino);transform:rotate(6deg);line-height:1.1;text-align:center}
@@ -331,8 +333,8 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
     <div class="collage">
       <div class="arco"><img src="img/gaby-retrato.jpg" alt="Gaby sonriendo frente a un fondo rosa" width="700" height="700"><svg viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 C70 6 140 10 190 52 C230 86 270 92 300 70 C335 44 360 34 400 30 V100 H0Z" fill="#FECEE0"/><path d="M150 100 C200 72 240 74 290 60 C330 48 355 30 400 26 V100Z" fill="#FFA6C8"/></svg></div>
       <div class="ventana" aria-hidden="true"><div class="ventana__barra"><i></i><i></i><i></i></div><img src="img/notion-espacio.jpg" alt="" loading="lazy"></div>
-      <figure class="polaroid" style="margin:0"><div class="washi"></div><img src="img/gaby-3.jpg" alt="Gaby lanzando un beso a la cámara" loading="lazy"><span>20 de 10</span></figure>
-      <div class="parche parche--diez" aria-hidden="true"><div>20<small>de 10</small></div></div>
+      <figure class="polaroid" style="margin:0"><div class="washi"></div><img src="img/gaby-3.jpg" alt="Gaby lanzando un beso a la cámara" loading="lazy"><span>con orden se crea mejor</span></figure>
+      <div class="parche parche--diez" aria-hidden="true"><div><small>sistemas en</small>Notion</div></div>
       <svg class="parche parche--brillo" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 C16.4 11.5 20.5 15.6 31 16 C20.5 16.4 16.4 20.5 16 31 C15.6 20.5 11.5 16.4 1 16 C11.5 15.6 15.6 11.5 16 1Z" fill="#FFA6C8" stroke="#FFA6C8" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 7 C16.3 13.5 18.5 15.7 25 16 C18.5 16.3 16.3 18.5 16 25 C15.7 18.5 13.5 16.3 7 16 C13.5 15.7 15.7 13.5 16 7Z" fill="none" stroke="#FFFFFF" stroke-width=".7" stroke-dasharray="1.2 .9"/></svg>
       <svg class="parche parche--corazon" viewBox="0 0 100 96" aria-hidden="true"><path d="M50 88 C20 66 6 50 6 32 C6 18 17 8 30 8 C40 8 46 14 50 22 C54 14 60 8 70 8 C83 8 94 18 94 32 C94 50 80 66 50 88Z" fill="#75052F"/><path d="M50 88 C20 66 6 50 6 32 C6 18 17 8 30 8 C40 8 46 14 50 22 C54 14 60 8 70 8 C83 8 94 18 94 32 C94 50 80 66 50 88Z" fill="none" stroke="#FECEE0" stroke-width="2" stroke-dasharray="4 3" transform="translate(50 46) scale(.82) translate(-50 -46)"/></svg>
     </div>
