@@ -53,7 +53,7 @@ p{margin:0 0 12px;font-size:17px}
   var producto = q.get('producto') || '';
   var estado = (q.get('bold-tx-status') || '').toLowerCase();
   var orden = q.get('bold-order-id') || '';
-  var nombres = { clase: 'la clase Notion para mentes creativas', plantilla: 'la plantilla de contenido', sesion: 'tu sesión 1:1', prueba: 'la prueba de pago' };
+  var nombres = { clase: 'la clase Notion para mentes creativas', plantilla: 'la plantilla de contenido', sesion: 'tu sesión 1:1' };
   var nombre = nombres[producto] || 'tu compra';
   var titulo = document.getElementById('titulo'), texto = document.getElementById('texto'), acciones = document.getElementById('acciones'), saludo = document.getElementById('saludo');
   if (orden) { var o = document.getElementById('orden'); o.textContent = 'Orden: ' + orden; o.hidden = false; }
@@ -78,8 +78,8 @@ p{margin:0 0 12px;font-size:17px}
     else { boton('Agendar por WhatsApp', wa('Hola Gaby, ya pagué mi sesión 1:1 y quiero agendar.')); }
   } else {
     titulo.innerHTML = 'Gracias por tu <em>compra</em>';
-    texto.innerHTML = '<p>Escríbeme por WhatsApp con tu número de orden y te envío el acceso a ' + nombre + '.</p>';
-    boton('Recibir mi acceso', wa('Hola Gaby, ya pagué ' + nombre + ' y quiero mi acceso.'));
+    texto.innerHTML = '<p>Te envié a tu correo el acceso a ' + nombre + '. Puede tardar unos minutos en llegar; si no lo ves, revisa tu carpeta de spam o promociones.</p>';
+    boton('No me llegó el correo', wa('Hola Gaby, ya pagué ' + nombre + ' y no me llegó el correo con el acceso.'), true);
   }
   boton('Volver a la página', '/', true);
 })();

@@ -14,23 +14,16 @@ const PRODUCTOS = {
   clase: {
     nombre: 'Clase Notion para mentes creativas',
     asunto: 'Tu clase Notion para mentes creativas',
-    enlace: '',
+    enlace: 'https://creandocongaaby.notion.site/Tu-primer-sistema-de-Notion-2c6b34cec75180d0b7f7c6c5aea5ded8',
     boton: 'Entrar a mi clase',
     texto: 'Ya tienes acceso a tu clase. Ahí encuentras la clase grabada, los recursos y tu espacio personal en Notion.',
   },
   plantilla: {
     nombre: 'Plantilla de contenido en Notion',
     asunto: 'Tu plantilla de contenido en Notion',
-    enlace: '',
+    enlace: 'https://creandocongaaby.notion.site/Plantilla-cb7b34cec751824dbac00184d41c85bc',
     boton: 'Duplicar mi plantilla',
     texto: 'Ya tienes tu plantilla. Ábrela y toca "Duplicar" para guardarla en tu propio Notion.',
-  },
-  prueba: {
-    nombre: 'Prueba de pago',
-    asunto: 'Prueba: así le llega el correo a tus clientes',
-    enlace: 'https://creandocongaaby.com',
-    boton: 'Ver mi acceso',
-    texto: 'Este es un correo de prueba. Así se ve lo que reciben tus clientes después de pagar.',
   },
   sesion: {
     nombre: 'Sesión 1:1 con Gaby',
