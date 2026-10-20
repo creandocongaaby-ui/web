@@ -104,9 +104,10 @@ module.exports = async (req, res) => {
   const id = (referencia.match(/^CCG-([a-z]+)-/) || [])[1];
   const p = PRODUCTOS[id];
   if (!p) {
-    // No se reconoció el producto: avisa a Gaby con los datos para que lo revise.
+    // Ventas de otras herramientas de Bold (datáfono, links) se ignoran.
+    // Solo en modo pruebas se avisa a Gaby, para revisar qué datos manda Bold.
     try {
-      if (process.env.RESEND_API_KEY) await enviar(CORREO_GABY, 'Venta aprobada en Bold (revisar producto)',
+      if (process.env.RESEND_API_KEY && process.env.BOLD_MODO_PRUEBAS === '1') await enviar(CORREO_GABY, 'Venta aprobada en Bold (revisar producto)',
         `<p>Llegó una venta aprobada pero no pude identificar el producto.</p><p>Referencia: ${escapar(referencia || 'vacía')}<br>Cliente: ${escapar(d.payer_email || 'sin correo')}<br>Monto: ${escapar(d.amount ? d.amount.total + ' ' + d.amount.currency : '')}<br>Bold: ${escapar(d.payment_id)}</p>`);
     } catch (e) { console.error(e); }
     res.status(200).json({ ok: true, ignorado: 'producto' });
