@@ -4,327 +4,526 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Creando con Gaaby · Estrategia y organización para tu negocio</title>
-<meta name="description" content="Soy Gaby, estratega de marketing y organización. Ayudo a dueños de negocio a organizar su negocio y a crear contenido con intención.">
+<meta name="description" content="Soy Gaby, estratega de marketing y organización. Diseño sistemas a tu medida para planificar tu contenido, organizar a tu equipo y ordenar los procesos de tu negocio.">
+<link rel="canonical" href="https://creandocongaaby.com/">
 <meta property="og:title" content="Creando con Gaaby">
 <meta property="og:description" content="El orden te da la libertad de vivir lo que sueñas.">
 <meta property="og:image" content="https://creandocongaaby.com/gaby.jpg">
-<link rel="canonical" href="https://creandocongaaby.com/">
 <meta property="og:url" content="https://creandocongaaby.com">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#541311">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=DM+Serif+Display:ital@0;1&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap">
 <style>
-body{margin:0;background:#F2EEE8}
-a{color:#541311}a:hover{color:#8A2A26}
-@media (max-width:760px){.nav-link{display:none}.top-nav{flex-wrap:nowrap!important}.nav-logo{zoom:.82}}
+:root{
+  --vino:#541311; --vino-2:#3A0B0A; --rosa:#D68C96; --rosa-osc:#A9636D; --rosa-cl:#F4D9DC;
+  --crema:#F2EEE8; --arena:#E6DCCD; --oliva:#666B30; --oliva-osc:#3F4220; --oliva-cl:#D9DBB8; --papel:#FFFDF9;
+  --serif:'DM Serif Display',Georgia,serif; --sans:'Poppins',system-ui,sans-serif; --mano:'Caveat',cursive;
+  --wrap:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--vino);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.05}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.label{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--oliva)}
+.mano{font-family:var(--mano);font-weight:700}
+.brillo{font-style:italic;color:var(--rosa)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:10px;background:var(--vino);color:var(--crema);font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--vino);transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-2px);background:var(--vino-2);color:var(--crema)}
+.btn--linea{background:transparent;color:var(--vino)}
+.btn--linea:hover{background:var(--vino);color:var(--crema)}
+.btn--crema{background:var(--crema);color:var(--vino);border-color:var(--crema)}
+.btn--crema:hover{background:var(--papel);color:var(--vino)}
+.pill{display:inline-block;border-radius:6px;padding:4px 12px;font-size:14px;font-weight:500}
+.pill--rosa{background:var(--rosa-cl)}.pill--arena{background:var(--arena)}.pill--oliva{background:var(--oliva-cl);color:var(--oliva-osc)}
+:focus-visible{outline:3px solid var(--rosa);outline-offset:3px;border-radius:6px}
+
+/* barra superior */
+.topbar{background:var(--vino);color:var(--crema);font-size:13px;font-weight:500;letter-spacing:.06em;text-align:center;padding:8px 16px}
+.topbar a{color:var(--rosa-cl);text-decoration:underline;text-underline-offset:3px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(242,238,232,.94);backdrop-filter:blur(8px);border-bottom:1.5px solid rgba(84,19,17,.12)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.logo{display:flex;align-items:baseline;gap:6px;text-decoration:none;color:var(--vino);white-space:nowrap}
+.logo b{font-weight:600;font-size:26px;letter-spacing:-.04em}
+.logo i{font-family:var(--mano);font-style:normal;font-weight:700;font-size:21px;color:var(--oliva)}
+.logo em{font-family:var(--serif);font-size:31px;line-height:1;color:var(--rosa)}
+.nav__links{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:500}
+.nav__links a{text-decoration:none}
+.nav__links a:not(.btn):hover{color:var(--rosa-osc)}
+.nav__ig{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border-radius:50%;border:1.5px solid var(--vino)}
+.nav .btn{min-height:44px;padding:10px 18px;font-size:15px}
+@media (max-width:860px){.nav__links .nav__link,.nav__ig{display:none}.logo b{font-size:22px}.logo em{font-size:26px}.logo i{font-size:18px}}
+
+/* hero */
+.hero{padding:56px 0 72px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero__hola{font-family:var(--mano);font-weight:700;font-size:32px;color:var(--oliva);transform:rotate(-3deg);display:inline-block;margin-bottom:6px}
+.hero h1{font-size:clamp(44px,6.4vw,88px);letter-spacing:-.01em}
+.hero h1 .mano{font-size:1.28em;color:var(--rosa);line-height:.7;display:inline-block;transform:rotate(-4deg) translateY(4px)}
+.hero__sub{font-size:18px;max-width:540px;margin:24px 0 22px}
+.hero__pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.collage{position:relative;aspect-ratio:1/1.05;width:100%;max-width:560px;justify-self:center}
+.blob{position:absolute;left:12%;top:4%;width:72%;height:80%;background:var(--rosa-cl);clip-path:url(#ondas)}
+.blob img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.polaroid{position:absolute;background:var(--papel);padding:10px 10px 38px;box-shadow:0 14px 30px rgba(84,19,17,.18)}
+.polaroid img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.polaroid span{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--mano);font-weight:700;font-size:20px;color:var(--oliva)}
+.collage .polaroid{left:-2%;bottom:2%;width:36%;transform:rotate(-8deg)}
+.washi{position:absolute;height:26px;width:46%;left:27%;top:-13px;background:repeating-linear-gradient(45deg,rgba(214,140,150,.85) 0 9px,rgba(244,217,220,.85) 9px 18px);clip-path:polygon(0 8%,4% 0,8% 10%,12% 0,100% 0,96% 14%,100% 30%,96% 46%,100% 62%,96% 78%,100% 100%,0 100%,4% 82%,0 64%,4% 46%,0 28%)}
+.ventana{position:absolute;right:-3%;bottom:6%;width:50%;background:var(--papel);border-radius:12px;box-shadow:0 18px 36px rgba(84,19,17,.2);overflow:hidden;transform:rotate(4deg);border:1.5px solid rgba(84,19,17,.12)}
+.ventana__barra{display:flex;gap:5px;padding:8px 10px;background:var(--arena)}
+.ventana__barra i{width:8px;height:8px;border-radius:50%;background:var(--vino);opacity:.35}
+.ventana img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top}
+.parche{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center}
+.parche--diez{right:4%;top:2%;width:22%;aspect-ratio:1;border-radius:50%;background:var(--rosa-cl);box-shadow:0 5px 0 #D6A9AE,0 12px 18px rgba(84,19,17,.22);transform:rotate(-10deg);font-family:var(--serif);font-size:clamp(20px,2.6vw,30px);line-height:1}
+.parche--diez::after{content:"";position:absolute;inset:8%;border-radius:50%;border:2.5px dashed rgba(84,19,17,.45)}
+.parche--diez small{display:block;font-family:var(--sans);font-size:.45em;font-weight:600}
+.parche--brillo{left:2%;top:6%;width:15%;filter:drop-shadow(0 3px 0 #464A1F) drop-shadow(0 8px 8px rgba(84,19,17,.25))}
+.parche--corazon{left:44%;bottom:-2%;width:15%;transform:rotate(8deg);filter:drop-shadow(0 4px 0 #3A0B0A) drop-shadow(0 10px 10px rgba(84,19,17,.25))}
+.nota-mano{position:absolute;right:2%;top:30%;font-family:var(--mano);font-weight:700;font-size:clamp(18px,2vw,24px);color:var(--vino);transform:rotate(6deg);line-height:1.1;text-align:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.collage{max-width:460px;margin-top:12px}}
+
+/* sello giratorio */
+.sello{position:relative;width:118px;height:118px;flex:none}
+.sello svg.anillo{position:absolute;inset:0;animation:girar 22s linear infinite}
+.sello .centro{position:absolute;left:30px;top:30px;width:58px;height:58px}
+@keyframes girar{to{transform:rotate(360deg)}}
+
+/* marquesina */
+.marquesina{background:var(--rosa-cl);border-block:1.5px solid rgba(84,19,17,.15);overflow:hidden;white-space:nowrap}
+.marquesina__pista{display:inline-flex;animation:correr 32s linear infinite}
+.marquesina span{font-family:var(--serif);font-size:24px;padding:12px 0;display:inline-flex;align-items:center;gap:18px;padding-right:18px}
+.marquesina svg{flex:none}
+@keyframes correr{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquesina__pista,.sello svg.anillo{animation:none}html{scroll-behavior:auto}}
+
+/* problema */
+.dolor{padding:88px 0}
+.dolor__cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
+.dolor h2{font-size:clamp(34px,4.4vw,56px)}
+.dolor__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.dolor__item{background:var(--papel);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;position:relative}
+.dolor__item .check{width:30px;height:30px;border-radius:8px;border:2px solid var(--vino);display:flex;align-items:center;justify-content:center}
+.dolor__item p{font-size:17px}
+.dolor__cierre{margin-top:32px;display:flex;align-items:center;gap:14px;font-size:19px;font-weight:600}
+@media (max-width:980px){.dolor__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.dolor__grid{grid-template-columns:1fr}}
+
+/* trabajo / carrusel */
+.trabajo{background:var(--vino);color:var(--crema);padding:88px 0 96px;position:relative}
+.trabajo__cab{text-align:center;max-width:760px;margin:0 auto 44px}
+.trabajo__cab .label{color:var(--oliva-cl)}
+.trabajo h2{font-size:clamp(34px,4.6vw,58px);margin-top:10px}
+.trabajo h2 .mano{color:var(--rosa);font-size:1.25em;line-height:.8;display:inline-block;transform:rotate(-3deg)}
+.trabajo__cab p{margin-top:16px;font-size:18px;color:#EBDFDA}
+.tarjeta-festonada{position:relative;background:var(--papel);color:var(--vino);padding:44px 12px;
+  -webkit-mask:radial-gradient(14px at 50% 0,#0000 97%,#000) 50% 0/28px 51% repeat-x,radial-gradient(14px at 50% 100%,#0000 97%,#000) 50% 100%/28px 51% repeat-x;
+          mask:radial-gradient(14px at 50% 0,#0000 97%,#000) 50% 0/28px 51% repeat-x,radial-gradient(14px at 50% 100%,#0000 97%,#000) 50% 100%/28px 51% repeat-x}
+.carrusel{position:relative}
+.carrusel__pista{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:0}
+.carrusel__pista::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding:6px 28px}
+.slide__img{border-radius:14px;overflow:hidden;border:1.5px solid rgba(84,19,17,.15);box-shadow:0 12px 28px rgba(84,19,17,.14);background:var(--crema)}
+.slide__img img{width:100%;aspect-ratio:16/11;object-fit:cover;object-position:top left}
+.slide__num{font-family:var(--mano);font-weight:700;font-size:26px;color:var(--oliva)}
+.slide h3{font-size:clamp(28px,3vw,40px);margin:4px 0 14px}
+.slide p{font-size:17px;margin-bottom:18px}
+.slide__pills{display:flex;flex-wrap:wrap;gap:8px}
+.carrusel__ctrl{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:26px}
+.flecha{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--crema);background:transparent;color:var(--crema);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s}
+.flecha:hover{background:rgba(242,238,232,.12)}
+.puntos{display:flex;gap:8px}
+.puntos button{width:10px;height:10px;border-radius:50%;border:none;background:rgba(242,238,232,.35);padding:0;cursor:pointer}
+.puntos button[aria-current="true"]{background:var(--rosa);width:26px;border-radius:6px}
+.sticker-flotante{position:absolute;z-index:2}
+@media (max-width:860px){.slide{grid-template-columns:1fr;gap:22px;padding:6px 16px}.tarjeta-festonada{padding:40px 4px}}
+
+/* proceso */
+.proceso{padding:84px 0 40px}
+.proceso h2{font-size:clamp(32px,4vw,50px);margin:8px 0 34px}
+.pasos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:p}
+.paso{border-top:2px solid var(--vino);padding-top:18px}
+.paso b{font-family:var(--mano);font-size:28px;color:var(--rosa-osc);display:block;line-height:1}
+.paso h3{font-size:26px;margin:6px 0 8px}
+@media (max-width:860px){.pasos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.pasos{grid-template-columns:1fr}}
+
+/* servicios */
+.servicios{padding:56px 0 96px}
+.servicios__titulo{text-align:center;margin-bottom:40px}
+.servicios__titulo .mano{font-size:clamp(40px,5vw,60px);color:var(--vino);line-height:1;display:block}
+.servicios__titulo p{font-size:18px;margin-top:8px}
+.servicios__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:stretch}
+.serv{position:relative;border:1.5px solid var(--vino);border-radius:28px;padding:40px 30px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.serv--rosa{background:var(--rosa-cl)}.serv--oliva{background:var(--oliva-cl)}.serv--arena{background:var(--arena)}
+.serv--onda{border:none;border-radius:0;
+  -webkit-mask:radial-gradient(18px at 0 50%,#0000 97%,#000) 0 50%/51% 36px repeat-y,radial-gradient(18px at 100% 50%,#0000 97%,#000) 100% 50%/51% 36px repeat-y;
+          mask:radial-gradient(18px at 0 50%,#0000 97%,#000) 0 50%/51% 36px repeat-y,radial-gradient(18px at 100% 50%,#0000 97%,#000) 100% 50%/51% 36px repeat-y;padding-inline:44px}
+.serv__icono{width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.serv__tag{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.serv h3{font-size:30px}
+.serv ul{list-style:none;padding:0;margin:4px 0 8px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.serv ul li::before{content:"✓ ";color:var(--rosa-osc);font-weight:700}
+.serv .btn{margin-top:auto}
+.serv--oliva{color:var(--oliva-osc)} .serv--oliva .btn{background:var(--oliva-osc);border-color:var(--oliva-osc)}
+@media (max-width:920px){.servicios__grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+
+/* sobre mi */
+.sobre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);border-block:1.5px solid var(--vino);background:var(--papel)}
+.sobre__texto{padding:72px 48px;display:flex;flex-direction:column;gap:18px;position:relative;justify-content:center}
+.sobre__texto h2{font-size:clamp(36px,4.4vw,58px)}
+.sobre__texto h2 .mano{color:var(--rosa);font-size:1.15em}
+.sobre__nota{font-family:var(--mano);font-weight:700;font-size:26px;color:var(--rosa-osc);transform:rotate(-4deg);align-self:flex-end;text-align:right;line-height:1.1}
+.sobre__chip{display:flex;align-items:center;gap:12px;background:var(--rosa-cl);border-radius:14px;padding:12px 16px;font-size:15px;align-self:flex-start}
+.cosas{display:flex;flex-wrap:wrap;gap:8px}
+.fotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:22px;background:var(--vino);align-content:center}
+.fotos .polaroid{position:relative;padding:7px 7px 7px;box-shadow:0 8px 18px rgba(0,0,0,.25)}
+.fotos .polaroid:nth-child(odd){transform:rotate(-2deg)}
+.fotos .polaroid:nth-child(even){transform:rotate(2deg)}
+@media (max-width:900px){.sobre{grid-template-columns:1fr}.sobre__texto{padding:56px 24px}.fotos{padding:20px}}
+
+/* recursos */
+.recursos{padding:96px 0}
+.recursos__cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px}
+.recursos h2{font-size:clamp(34px,4.4vw,56px)}
+.recursos__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.recurso{border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.recurso--rosa{background:var(--rosa-cl)}.recurso--oliva{background:var(--oliva-cl);color:var(--oliva-osc)}
+.recurso__img{padding:26px 26px 0}
+.recurso__img img{border-radius:12px 12px 0 0;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top left;box-shadow:0 -4px 20px rgba(84,19,17,.12)}
+.recurso__info{background:var(--papel);padding:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;color:var(--vino)}
+.recurso__info h3{font-size:28px;margin-top:4px}
+.precio{font-family:var(--serif);font-size:36px;line-height:1}
+.precio small{font-family:var(--sans);font-size:14px;font-weight:500}
+@media (max-width:820px){.recursos__grid{grid-template-columns:1fr}}
+
+/* cta final */
+.final{background:var(--rosa);padding:96px 0;position:relative;overflow:hidden}
+.final .wrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center}
+.final h2{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(48px,8vw,108px);line-height:.92}
+.final h2 .mano{display:block;text-transform:none;font-weight:700;color:var(--oliva-osc);font-size:.82em;letter-spacing:0;transform:rotate(-3deg);margin-top:6px}
+.final__card{background:var(--papel);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px rgba(84,19,17,.18)}
+.final__card h3{font-size:30px}
+@media (max-width:860px){.final .wrap{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
+.footer__grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px}
+.footer__logo b{display:block;font-weight:600;font-size:56px;letter-spacing:-.04em;line-height:.85}
+.footer__logo span{display:flex;align-items:baseline;gap:8px;margin-left:44px}
+.footer__logo i{font-family:var(--mano);font-style:normal;font-weight:700;font-size:30px;color:var(--oliva-cl)}
+.footer__logo em{font-family:var(--serif);font-size:64px;line-height:1;color:var(--rosa)}
+.contacto{display:flex;flex-direction:column;gap:14px;min-width:260px}
+.contacto a{text-decoration:none;display:flex;flex-direction:column}
+.contacto a small{font-size:13px;color:var(--rosa-cl)}
+.contacto a:hover span{text-decoration:underline}
+.footer__base{border-top:1px solid rgba(242,238,232,.2);margin-top:48px;padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--rosa-cl)}
 </style>
-<style>html{scroll-behavior:smooth}</style>
 </head>
 <body>
-<div style="width: 100%; background: #F2EEE8; color: #541311; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden;">
 
-<!-- NAV -->
-<header style="width: 100%; box-sizing: border-box; padding: 18px 24px; border-bottom: 1.5px solid rgba(84,19,17,0.15);">
-<nav class="top-nav" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
-<a class="nav-logo" href="#inicio" aria-label="Creando con Gaaby, inicio" style="text-decoration: none; display: flex; align-items: baseline; gap: 6px; color: #541311;">
-<span style="font-weight: 600; font-size: 26px; letter-spacing: -0.04em;">Creando</span>
-<span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 20px; color: #666B30;">con</span>
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-style: italic; font-size: 30px; line-height: 1; color: #D68C96;">Gaaby</span>
-<svg width="14" height="14" viewBox="0 0 32 32" aria-hidden="true" style="align-self: flex-start;"><path d="M16 0 Q16 16 32 16 Q16 16 16 32 Q16 16 0 16 Q16 16 16 0Z" fill="#666B30"></path></svg>
-</a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 15px; font-weight: 500;">
-<a class="nav-link" href="#sobre-mi" style="text-decoration: none;">Sobre mí</a>
-<a class="nav-link" href="#servicios" style="text-decoration: none;">Servicios</a>
-<a class="nav-link" href="#proceso" style="text-decoration: none;">Cómo trabajo</a>
-<a class="nav-link" href="#recursos" style="text-decoration: none;">Recursos</a>
-<a class="nav-link" href="#contacto" style="text-decoration: none;">Contacto</a>
-<a href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20ordenar%20mi%20negocio" style="text-decoration: none; background: #541311; color: #F2EEE8; padding: 12px 20px; border-radius: 10px; font-weight: 600; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;">Escríbeme</a>
-</div>
-</nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="ondas" clipPathUnits="objectBoundingBox">
+      <path d="M.08,.06 C.18,-.02 .3,.07 .42,.03 C.55,-.01 .66,.05 .78,.02 C.92,-.01 1,.1 .97,.24 C.94,.36 1.02,.47 .98,.6 C.94,.72 1.01,.84 .94,.94 C.86,1.03 .74,.96 .62,.99 C.5,1.02 .38,.96 .26,.99 C.12,1.02 .02,.95 .03,.8 C.04,.68 -.02,.57 .02,.45 C.06,.33 -.02,.16 .08,.06 Z"/>
+    </clipPath>
+    <symbol id="brillo" viewBox="0 0 32 32"><path d="M16 0 Q16 16 32 16 Q16 16 16 32 Q16 16 0 16 Q16 16 16 0Z"/></symbol>
+    <symbol id="emblema" viewBox="0 0 120 120"><rect x="6" y="18" width="92" height="92" rx="24" fill="#541311"/><path d="M30 64 L48 82 L80 44" stroke="#D68C96" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 0 Q100 18 118 18 Q100 18 100 36 Q100 18 82 18 Q100 18 100 0Z" fill="#666B30"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">El orden te da libertad · <a href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20ordenar%20mi%20negocio">Escríbeme por WhatsApp</a></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Creando con Gaaby, inicio"><b>Creando</b><i>con</i><em>Gaaby</em><svg width="13" height="13" fill="#666B30" aria-hidden="true" style="align-self:flex-start"><use href="#brillo"/></svg></a>
+    <nav class="nav__links" aria-label="Principal">
+      <a class="nav__link" href="#trabajo">Mi trabajo</a>
+      <a class="nav__link" href="#servicios">Servicios</a>
+      <a class="nav__link" href="#sobre-mi">Sobre mí</a>
+      <a class="nav__link" href="#recursos">Recursos</a>
+      <a class="nav__ig" href="https://www.instagram.com/creandocongaaby" aria-label="Instagram de Creando con Gaaby"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a class="btn" href="#contacto">Hablemos</a>
+    </nav>
+  </div>
 </header>
 
+<main>
 <!-- HERO -->
-<section id="inicio" style="box-sizing: border-box; padding: 72px 24px 96px;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
-<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">Estratega de marketing y organización</span>
-<h1 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1.02;">El orden te da la libertad de vivir lo que <span style="font-style: italic; color: #D68C96;">sueñas</span>.</h1>
-<p style="margin: 0; font-size: 19px; max-width: 560px;">Bueno, déjame presentarme: soy Gaby. Ayudo a dueños de negocio a organizar su negocio y a crear contenido con intención, para que recuperen su tiempo.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px;">
-<span style="background: #F4D9DC; border-radius: 6px; padding: 5px 12px; font-size: 14px; font-weight: 500;">Sistemas en Notion</span>
-<span style="background: #E6DCCD; border-radius: 6px; padding: 5px 12px; font-size: 14px; font-weight: 500;">Estrategia de contenido</span>
-<span style="background: #D9DBB8; color: #3F4220; border-radius: 6px; padding: 5px 12px; font-size: 14px; font-weight: 500;">Equipo y procesos</span>
-</div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px;">
-<a href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20ordenar%20mi%20negocio" style="text-decoration: none; background: #541311; color: #F2EEE8; padding: 16px 26px; border-radius: 10px; font-weight: 600; font-size: 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;">Escríbeme por WhatsApp</a>
-<a href="#servicios" style="text-decoration: none; border: 1.5px solid #541311; color: #541311; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;">Ver cómo te ayudo</a>
-</div>
-</div>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="hero__hola">bueno, hola, soy Gaby</span>
+      <h1>El orden te da la libertad de vivir lo que <span class="mano">sueñas</span></h1>
+      <p class="hero__sub">Soy estratega de marketing y organización. Diseño sistemas a tu medida para planificar tu contenido, organizar a tu equipo y ordenar los procesos de tu negocio, para que recuperes tu tiempo.</p>
+      <div class="hero__pills"><span class="pill pill--rosa">Sistemas en Notion</span><span class="pill pill--arena">Estrategia de contenido</span><span class="pill pill--oliva">Equipo y procesos</span></div>
+      <div class="hero__ctas">
+        <a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20ordenar%20mi%20negocio">Escríbeme por WhatsApp</a>
+        <a class="btn btn--linea" href="#trabajo">Mira cómo trabajo</a>
+        <div class="sello" aria-hidden="true">
+          <svg class="anillo" viewBox="0 0 118 118"><defs><path id="circulo" d="M59,59 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><circle cx="59" cy="59" r="58" fill="#F4D9DC"/><text font-family="Poppins" font-size="10.5" font-weight="600" letter-spacing="2.6" fill="#541311"><textPath href="#circulo">CREANDO CON GAABY · EL ORDEN TE DA LIBERTAD ·</textPath></text></svg>
+          <svg class="centro"><use href="#emblema"/></svg>
+        </div>
+      </div>
+    </div>
 
-<div style="flex: 1 1 380px; min-width: 0; position: relative; display: flex; justify-content: center; padding: 36px 16px;">
-<div style="position: relative; width: 100%; max-width: 400px; transform: rotate(-2deg); background: #FFFDF9; padding: 16px 16px 60px; box-shadow: 0 18px 40px rgba(84,19,17,0.16);">
-<div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%) rotate(4deg); width: 150px; height: 34px; background: repeating-linear-gradient(45deg, rgba(214,140,150,0.8) 0 10px, rgba(244,217,220,0.8) 10px 20px); clip-path: polygon(0 8%,4% 0,8% 10%,12% 0,100% 0,96% 12%,100% 25%,96% 40%,100% 55%,96% 70%,100% 85%,96% 100%,0 100%,4% 85%,0 70%,4% 55%,0 40%,4% 25%);"></div>
-<img src="gaby.jpg" alt="Gaby sonriendo frente a un fondo rosa" style="display: block; width: 100%; height: 440px; object-fit: cover; object-position: center top;">
-<p style="margin: 14px 0 0; font-family: 'Caveat', cursive; font-weight: 700; font-size: 28px; text-align: center; color: #666B30;">esta soy yo, café frío en mano</p>
-</div>
-<div style="position: absolute; top: 4px; right: 0; width: 112px; height: 112px; border-radius: 50%; background: #F4D9DC; box-shadow: 0 5px 0 #D6A9AE, 0 12px 18px rgba(84,19,17,0.22); display: flex; align-items: center; justify-content: center; transform: rotate(-10deg);">
-<div style="position: absolute; top: 8px; right: 8px; bottom: 8px; left: 8px; border-radius: 50%; border: 2.5px dashed rgba(84,19,17,0.45);"></div>
-<div style="font-family: 'DM Serif Display', Georgia, serif; font-size: 28px; line-height: 1; text-align: center;">20<div style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600;">de 10</div></div>
-</div>
-<svg width="90" height="90" viewBox="0 0 32 32" aria-hidden="true" style="position: absolute; bottom: 20px; left: 0; filter: drop-shadow(0 3px 0 #464A1F) drop-shadow(0 8px 8px rgba(84,19,17,0.25));"><path d="M16 1 Q16 16 31 16 Q16 16 16 31 Q16 16 1 16 Q16 16 16 1Z" fill="#666B30" stroke="#666B30" stroke-width="2" stroke-linejoin="round"></path><path d="M16 6 Q16 16 26 16 Q16 16 16 26 Q16 16 6 16 Q16 16 16 6Z" fill="none" stroke="#F2EEE8" stroke-width="0.8" stroke-dasharray="1.4 1"></path></svg>
-</div>
-</div>
+    <div class="collage">
+      <div class="blob"><img src="img/gaby-retrato.jpg" alt="Gaby sonriendo frente a un fondo rosa" width="700" height="700"></div>
+      <div class="ventana" aria-hidden="true"><div class="ventana__barra"><i></i><i></i><i></i></div><img src="img/notion-espacio.jpg" alt="" loading="lazy"></div>
+      <figure class="polaroid" style="margin:0"><div class="washi"></div><img src="img/gaby-3.jpg" alt="Gaby lanzando un beso a la cámara" loading="lazy"><span>20 de 10</span></figure>
+      <div class="parche parche--diez" aria-hidden="true"><div>20<small>de 10</small></div></div>
+      <svg class="parche parche--brillo" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 Q16 16 31 16 Q16 16 16 31 Q16 16 1 16 Q16 16 16 1Z" fill="#666B30" stroke="#666B30" stroke-width="2" stroke-linejoin="round"/><path d="M16 6 Q16 16 26 16 Q16 16 16 26 Q16 16 6 16 Q16 16 16 6Z" fill="none" stroke="#F2EEE8" stroke-width=".8" stroke-dasharray="1.4 1"/></svg>
+      <svg class="parche parche--corazon" viewBox="0 0 100 96" aria-hidden="true"><path d="M50 88 C20 66 6 50 6 32 C6 18 17 8 30 8 C40 8 46 14 50 22 C54 14 60 8 70 8 C83 8 94 18 94 32 C94 50 80 66 50 88Z" fill="#541311"/><path d="M50 88 C20 66 6 50 6 32 C6 18 17 8 30 8 C40 8 46 14 50 22 C54 14 60 8 70 8 C83 8 94 18 94 32 C94 50 80 66 50 88Z" fill="none" stroke="#F4D9DC" stroke-width="2" stroke-dasharray="4 3" transform="translate(50 46) scale(.82) translate(-50 -46)"/></svg>
+    </div>
+  </div>
 </section>
 
-<!-- PROBLEMA -->
-<section style="box-sizing: border-box; padding: 88px 24px; background: #E6DCCD;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
-<div style="display: flex; flex-direction: column; gap: 10px; max-width: 720px;">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">Seamos honestos</span>
-<h2 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05;">¿Te <span style="font-style: italic; color: #541311;">suena</span> esto?</h2>
+<!-- MARQUESINA -->
+<div class="marquesina" aria-hidden="true">
+  <div class="marquesina__pista">
+    <span>Estrategia de contenido <svg width="16" height="16" fill="#666B30"><use href="#brillo"/></svg> Sistemas en Notion <svg width="16" height="16" fill="#D68C96"><use href="#brillo"/></svg> Organización de equipos <svg width="16" height="16" fill="#541311"><use href="#brillo"/></svg> Project management <svg width="16" height="16" fill="#666B30"><use href="#brillo"/></svg></span>
+    <span>Estrategia de contenido <svg width="16" height="16" fill="#666B30"><use href="#brillo"/></svg> Sistemas en Notion <svg width="16" height="16" fill="#D68C96"><use href="#brillo"/></svg> Organización de equipos <svg width="16" height="16" fill="#541311"><use href="#brillo"/></svg> Project management <svg width="16" height="16" fill="#666B30"><use href="#brillo"/></svg></span>
+  </div>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-<div style="flex: 1 1 240px; background: #FFFDF9; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 44px; color: #D68C96; line-height: 1;">01</span>
-<p style="margin: 0; font-size: 17px;">Tus ideas viven en las notas del celular y nunca llega el momento de publicarlas.</p>
-</div>
-<div style="flex: 1 1 240px; background: #FFFDF9; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 44px; color: #D68C96; line-height: 1;">02</span>
-<p style="margin: 0; font-size: 17px;">Tu equipo te pregunta todo, porque nadie sabe quién es responsable de qué.</p>
-</div>
-<div style="flex: 1 1 240px; background: #FFFDF9; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 44px; color: #D68C96; line-height: 1;">03</span>
-<p style="margin: 0; font-size: 17px;">Pasas el día apagando fuegos y sientes que no avanzas.</p>
-</div>
-<div style="flex: 1 1 240px; background: #FFFDF9; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 44px; color: #D68C96; line-height: 1;">04</span>
-<p style="margin: 0; font-size: 17px;">Tu negocio va bien, pero te está manejando la vida.</p>
-</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px;">
-<svg width="120" height="54" viewBox="0 0 200 90" aria-hidden="true"><path d="M8 70 C50 18 120 10 178 44" stroke="#541311" stroke-width="3.5" fill="none" stroke-linecap="round"></path><path d="M158 26 L180 45 L154 54" stroke="#541311" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<p style="margin: 0; font-size: 19px; font-weight: 600;">Si dijiste que sí a alguna, quédate. Para eso estoy aquí.</p>
-</div>
-</div>
+
+<!-- DOLOR -->
+<section class="dolor">
+  <div class="wrap">
+    <div class="dolor__cab">
+      <div><span class="label">Seamos honestos</span><h2 style="margin-top:8px">¿Te <span class="brillo">suena</span> esto?</h2></div>
+      <p class="mano" style="font-size:28px;color:var(--rosa-osc);transform:rotate(-3deg)">a mí también me pasó</p>
+    </div>
+    <div class="dolor__grid">
+      <div class="dolor__item"><span class="check" aria-hidden="true"></span><p>Tus ideas viven en las notas del celular y nunca llega el momento de publicarlas.</p></div>
+      <div class="dolor__item"><span class="check" aria-hidden="true"></span><p>Tu equipo te pregunta todo, porque nadie sabe quién es responsable de qué.</p></div>
+      <div class="dolor__item"><span class="check" aria-hidden="true"></span><p>Pasas el día apagando fuegos y sientes que no avanzas.</p></div>
+      <div class="dolor__item"><span class="check" aria-hidden="true"></span><p>Tu negocio va bien, pero te está manejando la vida.</p></div>
+    </div>
+    <div class="dolor__cierre"><svg width="110" height="46" viewBox="0 0 200 90" aria-hidden="true"><path d="M8 70 C50 18 120 10 178 44" stroke="#541311" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M158 26 L180 45 L154 54" stroke="#541311" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Si marcaste alguna, quédate. Para eso estoy aquí.</div>
+  </div>
 </section>
 
-<!-- SOBRE MI -->
-<section id="sobre-mi" style="box-sizing: border-box; padding: 96px 24px; background: #541311; color: #F2EEE8;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start;">
-<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px;">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D9DBB8;">Sobre mí</span>
-<h2 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(38px, 5vw, 64px); line-height: 1.02;">Hola, soy <span style="font-style: italic; color: #D68C96;">Gaby</span></h2>
-<p style="margin: 0; font-size: 18px;">Te cuento un secreto: por naturaleza soy desordenada. Por eso entiendo el caos desde adentro y sé cómo se sale de ahí.</p>
-<p style="margin: 0; font-size: 18px;">Trabajaba como diseñadora gráfica y un 31 de diciembre entendí que mi vida no podía seguir dependiendo de otros. En febrero renuncié y empecé mi marca.</p>
-<p style="margin: 0; font-size: 18px;">Hoy soy estratega y project manager. Dirijo los proyectos de mis clientes de principio a fin, con mi equipo de diseño, edición y un asistente. Abrazo cada proyecto como si fuera mío, y lo que más me hace ilusión es ver a un cliente recuperar su tiempo.</p>
-<div style="display: flex; align-items: center; gap: 14px; background: rgba(242,238,232,0.08); border-radius: 18px; padding: 16px 20px; align-self: flex-start;">
-<svg width="34" height="34" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="18" width="92" height="92" rx="24" fill="#F2EEE8"></rect><path d="M30 64 L48 82 L80 44" stroke="#541311" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 0 Q100 18 118 18 Q100 18 100 36 Q100 18 82 18 Q100 18 100 0Z" fill="#D68C96"></path></svg>
-<span style="font-size: 15px;">Acompañé la campaña de un cliente en Despierta América de Univision.</span>
-</div>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #F2EEE8; color: #541311; padding: 32px 28px 40px; transform: rotate(2deg); box-shadow: 0 18px 40px rgba(0,0,0,0.25); position: relative; clip-path: polygon(0 0,100% 0,100% 94%,94% 98%,88% 95%,80% 99%,72% 95%,64% 99%,56% 95%,48% 99%,40% 95%,32% 99%,24% 95%,16% 99%,8% 95%,0 98%);">
-<h3 style="margin: 0 0 16px; font-family: 'Caveat', cursive; font-weight: 700; font-size: 36px; color: #666B30;">cosas de mí</h3>
-<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px;">
-<li>Venezolana, viviendo en Colombia</li>
-<li>Mamá de una adolescente</li>
-<li>Café frío con leche, siempre</li>
-<li>Bad Bunny no falta en mi playlist</li>
-<li>Fan de High School Musical y Hannah Montana</li>
-<li>Brigui-brigui: amo los brillitos</li>
-<li>Notion es mi segundo cerebro</li>
-</ul>
-</div>
-</div>
-</section>
+<!-- MI TRABAJO -->
+<section class="trabajo" id="trabajo">
+  <div class="wrap">
+    <div class="trabajo__cab">
+      <span class="label">Mira cómo trabajo</span>
+      <h2>Tu negocio entero, en un solo <span class="mano">lugar</span></h2>
+      <p>Así se ven los sistemas que armo en Notion. Cada espacio se diseña a la medida de cada cliente y de su forma de trabajar.</p>
+    </div>
 
-<!-- SERVICIOS -->
-<section id="servicios" style="box-sizing: border-box; padding: 96px 24px;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
-<div style="display: flex; flex-direction: column; gap: 10px; max-width: 760px;">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">Servicios</span>
-<h2 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05;">Cómo te puedo <span style="font-style: italic; color: #D68C96;">ayudar</span></h2>
-<p style="margin: 0; font-size: 18px;">Cada sistema se diseña a la medida de tu negocio y de tu forma de trabajar.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch;">
-
-<div style="flex: 1 1 320px; background: #541311; color: #F2EEE8; border-radius: 18px; padding: 36px 32px; display: flex; flex-direction: column; gap: 18px; position: relative;">
-<span style="align-self: flex-start; background: #D68C96; color: #541311; border-radius: 6px; padding: 5px 12px; font-size: 14px; font-weight: 500;">El más completo</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.1;">Acompañamiento mensual</h3>
-<p style="margin: 0; font-size: 16px;">Soy tu mano derecha. Dirijo tu proyecto de principio a fin y mi equipo se encarga de la ejecución.</p>
-<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px;">
-<li>Estrategia de contenido</li>
-<li>Sistema de organización en Notion a tu medida</li>
-<li>Coordinación de tu equipo y tus procesos</li>
-<li>Diseño y edición con mi equipo</li>
-</ul>
-<div style="flex-grow: 1;"></div>
-<a href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20saber%20m%C3%A1s%20del%20acompa%C3%B1amiento%20mensual" style="text-decoration: none; background: #F2EEE8; color: #541311; padding: 14px 24px; border-radius: 10px; font-weight: 600; text-align: center; min-height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">Quiero este</a>
-</div>
-
-<div style="flex: 1 1 320px; background: #FFFDF9; border-radius: 18px; padding: 36px 32px; display: flex; flex-direction: column; gap: 18px;">
-<span style="align-self: flex-start; background: #D9DBB8; color: #3F4220; border-radius: 6px; padding: 5px 12px; font-size: 14px; font-weight: 500;">Tú ejecutas</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.1;">Estrategia de contenido</h3>
-<p style="margin: 0; font-size: 16px;">Te digo qué publicar, para quién y con qué intención. Tú o tu equipo lo ejecutan con claridad.</p>
-<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px;">
-<li>Mensaje y pilares de tu marca</li>
-<li>Calendario de contenido en Notion</li>
-<li>Ideas con su objetivo y su CTA</li>
-</ul>
-<div style="flex-grow: 1;"></div>
-<a href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20saber%20m%C3%A1s%20de%20la%20estrategia%20de%20contenido" style="text-decoration: none; background: #541311; color: #F2EEE8; padding: 14px 24px; border-radius: 10px; font-weight: 600; text-align: center; min-height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">Quiero este</a>
-</div>
-
-<div style="flex: 1 1 320px; background: #FFFDF9; border-radius: 18px; padding: 36px 32px; display: flex; flex-direction: column; gap: 18px;">
-<span style="align-self: flex-start; background: #F4D9DC; color: #541311; border-radius: 6px; padding: 5px 12px; font-size: 14px; font-weight: 500;">Para empezar</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.1;">Sesión 1:1</h3>
-<p style="margin: 0; font-size: 16px;">Una sesión para ordenar ese tema que te está quitando tiempo: tu contenido, tu Notion o tus procesos.</p>
-<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px;">
-<li>Videollamada conmigo</li>
-<li>Sales con un plan de acción claro</li>
-</ul>
-<div style="flex-grow: 1;"></div>
-<a href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20agendar%20una%20sesi%C3%B3n%201%3A1" style="text-decoration: none; background: #541311; color: #F2EEE8; padding: 14px 24px; border-radius: 10px; font-weight: 600; text-align: center; min-height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">Quiero este</a>
-</div>
-
-</div>
-</div>
+    <div class="carrusel" data-carrusel>
+      <svg class="sticker-flotante" width="64" height="64" style="left:-10px;top:-24px;transform:rotate(-10deg)" aria-hidden="true"><use href="#emblema"/></svg>
+      <div class="tarjeta-festonada">
+        <div class="carrusel__pista" tabindex="0" aria-label="Ejemplos de sistemas en Notion">
+          <article class="slide" aria-roledescription="diapositiva" aria-label="1 de 4">
+            <div class="slide__img"><img src="img/notion-espacio.jpg" alt="Espacio de marca en Notion con portada de Creando con Gaaby, metas a corto, mediano y largo plazo, y accesos a brief, contrato y control de pagos" loading="lazy"></div>
+            <div>
+              <span class="slide__num">01 · espacio de marca</span>
+              <h3>Toda tu estrategia en un mismo lugar</h3>
+              <p>Metas, brief, contrato, links importantes y control de pagos. Abres un solo espacio y sabes hacia dónde va tu marca.</p>
+              <div class="slide__pills"><span class="pill pill--rosa">Estrategia</span><span class="pill pill--arena">Metas</span></div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="diapositiva" aria-label="2 de 4">
+            <div class="slide__img"><img src="img/notion-calendario.jpg" alt="Calendario de contenido de octubre en Notion con cada publicación, su red y su formato, junto a la vista del feed de Instagram" loading="lazy"></div>
+            <div>
+              <span class="slide__num">02 · calendario</span>
+              <h3>Sabes qué publicar toda la semana</h3>
+              <p>Cada pieza con su fecha, su red y su formato. Al lado, la vista de tu feed para cuidar la coherencia de tu perfil.</p>
+              <div class="slide__pills"><span class="pill pill--rosa">Contenido</span><span class="pill pill--oliva">Instagram</span></div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="diapositiva" aria-label="3 de 4">
+            <div class="slide__img"><img src="img/notion-planificacion.jpg" alt="Tabla de planificación en Notion con fecha, tema, llamado a la acción y estado de cada contenido" loading="lazy"></div>
+            <div>
+              <span class="slide__num">03 · planificación</span>
+              <h3>Cada idea con su intención</h3>
+              <p>Tema, llamado a la acción y estado de cada contenido. Tu equipo ve qué falta grabar, qué falta diseñar y qué ya está listo.</p>
+              <div class="slide__pills"><span class="pill pill--arena">Por grabar</span><span class="pill pill--rosa">Por diseñar</span></div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="diapositiva" aria-label="4 de 4">
+            <div class="slide__img"><img src="img/notion-tablero.jpg" alt="Tablero en Notion con columnas de reuniones, tareas, contenido y pagos" loading="lazy" style="aspect-ratio:auto"></div>
+            <div>
+              <span class="slide__num">04 · seguimiento</span>
+              <h3>Tu equipo sabe quién hace qué</h3>
+              <p>Reuniones, tareas, métricas y pagos ordenados por columnas. Y listo: menos mensajes preguntando y más trabajo avanzando.</p>
+              <div class="slide__pills"><span class="pill pill--oliva">Equipo</span><span class="pill pill--arena">Procesos</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="carrusel__ctrl">
+        <button class="flecha" type="button" data-prev aria-label="Ejemplo anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <div class="puntos" data-puntos></div>
+        <button class="flecha" type="button" data-next aria-label="Ejemplo siguiente"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- PROCESO -->
-<section id="proceso" style="box-sizing: border-box; padding: 88px 24px; background: #E6DCCD;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
-<div style="display: flex; flex-direction: column; gap: 10px;">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">Paso a paso</span>
-<h2 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05;">Así <span style="font-style: italic; color: #541311;">trabajamos</span></h2>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-<div style="flex: 1 1 240px; background: #FFFDF9; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-<svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="18" width="92" height="92" rx="24" fill="#541311"></rect><path d="M30 64 L48 82 L80 44" stroke="#D68C96" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 0 Q100 18 118 18 Q100 18 100 36 Q100 18 82 18 Q100 18 100 0Z" fill="#666B30"></path></svg>
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">Paso 1</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1;">Conversamos</h3>
-<p style="margin: 0; font-size: 16px;">Me escribes por WhatsApp y me cuentas qué necesita tu negocio.</p>
-</div>
-<div style="flex: 1 1 240px; background: #FFFDF9; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-<svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="18" width="92" height="92" rx="24" fill="#541311"></rect><path d="M30 64 L48 82 L80 44" stroke="#D68C96" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 0 Q100 18 118 18 Q100 18 100 36 Q100 18 82 18 Q100 18 100 0Z" fill="#666B30"></path></svg>
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">Paso 2</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1;">Diagnóstico</h3>
-<p style="margin: 0; font-size: 16px;">Reviso tu negocio, tu contenido y cómo trabaja tu equipo hoy.</p>
-</div>
-<div style="flex: 1 1 240px; background: #FFFDF9; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-<svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="18" width="92" height="92" rx="24" fill="#541311"></rect><path d="M30 64 L48 82 L80 44" stroke="#D68C96" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 0 Q100 18 118 18 Q100 18 100 36 Q100 18 82 18 Q100 18 100 0Z" fill="#666B30"></path></svg>
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">Paso 3</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1;">Diseño tu sistema</h3>
-<p style="margin: 0; font-size: 16px;">Armo tu estrategia y tu organización en Notion, a tu medida.</p>
-</div>
-<div style="flex: 1 1 240px; background: #FFFDF9; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-<svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="18" width="92" height="92" rx="24" fill="#541311"></rect><path d="M30 64 L48 82 L80 44" stroke="#D68C96" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 0 Q100 18 118 18 Q100 18 100 36 Q100 18 82 18 Q100 18 100 0Z" fill="#666B30"></path></svg>
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">Paso 4</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1;">Te acompaño</h3>
-<p style="margin: 0; font-size: 16px;">Ajustamos sobre la marcha hasta que todo fluya. Y listo.</p>
-</div>
-</div>
-</div>
+<section class="proceso" id="proceso">
+  <div class="wrap">
+    <span class="label">Paso a paso</span>
+    <h2>Así <span class="brillo">trabajamos</span></h2>
+    <div class="pasos">
+      <div class="paso"><b>uno</b><h3>Conversamos</h3><p>Me escribes por WhatsApp y me cuentas qué necesita tu negocio.</p></div>
+      <div class="paso"><b>dos</b><h3>Diagnóstico</h3><p>Reviso tu negocio, tu contenido y cómo trabaja tu equipo hoy.</p></div>
+      <div class="paso"><b>tres</b><h3>Diseño tu sistema</h3><p>Armo tu estrategia y tu organización en Notion, a tu medida.</p></div>
+      <div class="paso"><b>cuatro</b><h3>Te acompaño</h3><p>Ajustamos sobre la marcha hasta que todo fluya. Y listo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="wrap">
+    <div class="servicios__titulo">
+      <span class="mano">formas de trabajar conmigo</span>
+      <p>Cada sistema se diseña a la medida de tu negocio y de tu forma de trabajar.</p>
+    </div>
+    <div class="servicios__grid">
+      <article class="serv serv--rosa">
+        <div class="serv__icono" aria-hidden="true"><svg width="78" height="78" viewBox="0 0 120 120"><g transform="rotate(-6 60 60)"><rect x="14" y="20" width="92" height="84" rx="16" fill="#541311"/><rect x="22" y="28" width="76" height="68" rx="10" fill="none" stroke="#F4D9DC" stroke-width="2.5" stroke-dasharray="5 4"/><rect x="34" y="12" width="8" height="20" rx="4" fill="#D68C96"/><rect x="78" y="12" width="8" height="20" rx="4" fill="#D68C96"/><path d="M42 64 L54 76 L78 50" stroke="#D68C96" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
+        <span class="serv__tag">El más completo</span>
+        <h3>Acompañamiento mensual</h3>
+        <p>Soy tu mano derecha. Dirijo tu proyecto de principio a fin y mi equipo se encarga de la ejecución.</p>
+        <ul><li>Estrategia de contenido</li><li>Sistema en Notion a tu medida</li><li>Coordinación de tu equipo y tus procesos</li><li>Diseño y edición con mi equipo</li></ul>
+        <a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20saber%20m%C3%A1s%20del%20acompa%C3%B1amiento%20mensual">Quiero este</a>
+      </article>
+      <article class="serv serv--oliva serv--onda">
+        <div class="serv__icono" aria-hidden="true"><svg width="78" height="78" viewBox="0 0 120 120"><g transform="rotate(6 60 60)"><circle cx="60" cy="60" r="46" fill="#666B30"/><circle cx="60" cy="60" r="38" fill="none" stroke="#F2EEE8" stroke-width="2.5" stroke-dasharray="5 4"/><circle cx="60" cy="60" r="20" fill="none" stroke="#F2EEE8" stroke-width="6"/><circle cx="60" cy="60" r="6" fill="#D68C96"/><path d="M60 60 L92 28" stroke="#541311" stroke-width="6" stroke-linecap="round"/><path d="M84 22 L96 24 L98 36" stroke="#541311" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
+        <span class="serv__tag">Tú ejecutas</span>
+        <h3>Estrategia de contenido</h3>
+        <p>Te digo qué publicar, para quién y con qué intención. Tú o tu equipo lo ejecutan con claridad.</p>
+        <ul><li>Mensaje y pilares de tu marca</li><li>Calendario de contenido en Notion</li><li>Ideas con su objetivo y su CTA</li></ul>
+        <a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20saber%20m%C3%A1s%20de%20la%20estrategia%20de%20contenido">Quiero este</a>
+      </article>
+      <article class="serv serv--arena">
+        <div class="serv__icono" aria-hidden="true"><svg width="78" height="78" viewBox="0 0 120 120"><g transform="rotate(-4 60 60)"><path d="M18 26 h84 a12 12 0 0 1 12 12 v40 a12 12 0 0 1 -12 12 H52 L32 106 V90 H18 a12 12 0 0 1 -12 -12 V38 a12 12 0 0 1 12 -12Z" fill="#D68C96"/><path d="M22 34 h76 a6 6 0 0 1 6 6 v36 a6 6 0 0 1 -6 6 H22 a6 6 0 0 1 -6 -6 V40 a6 6 0 0 1 6 -6Z" fill="none" stroke="#541311" stroke-width="2.5" stroke-dasharray="5 4"/><circle cx="40" cy="58" r="6" fill="#541311"/><circle cx="60" cy="58" r="6" fill="#541311"/><circle cx="80" cy="58" r="6" fill="#541311"/></g></svg></div>
+        <span class="serv__tag">Para empezar</span>
+        <h3>Sesión 1:1</h3>
+        <p>Una sesión para ordenar ese tema que te está quitando tiempo: tu contenido, tu Notion o tus procesos.</p>
+        <ul><li>Videollamada conmigo</li><li>Sales con un plan de acción claro</li></ul>
+        <a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20agendar%20una%20sesi%C3%B3n%201%3A1">Quiero este</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MI -->
+<section class="sobre" id="sobre-mi">
+  <div class="sobre__texto">
+    <span class="label">Sobre mí</span>
+    <h2>Hola, soy <span class="mano">Gaby</span></h2>
+    <p style="font-size:18px">Te cuento un secreto: por naturaleza soy desordenada. Por eso entiendo el caos desde adentro y sé cómo se sale de ahí.</p>
+    <p style="font-size:18px">Trabajaba como diseñadora gráfica y un 31 de diciembre entendí que mi vida no podía seguir dependiendo de otros. En febrero renuncié y empecé mi marca.</p>
+    <p style="font-size:18px">Hoy soy estratega y project manager. Dirijo los proyectos de mis clientes de principio a fin, con mi equipo de diseño, edición y un asistente. Abrazo cada proyecto como si fuera mío.</p>
+    <div class="sobre__chip"><svg width="30" height="30" aria-hidden="true"><use href="#emblema"/></svg><span>Acompañé la campaña de un cliente en Despierta América de Univision.</span></div>
+    <div class="cosas" aria-label="Cosas de mí">
+      <span class="pill pill--rosa">Venezolana en Colombia</span><span class="pill pill--arena">Mamá de una adolescente</span><span class="pill pill--oliva">Café frío con leche</span><span class="pill pill--rosa">Bad Bunny en mi playlist</span><span class="pill pill--arena">Fan de High School Musical</span><span class="pill pill--oliva">Brigui-brigui</span>
+    </div>
+    <p class="sobre__nota">Notion es mi<br>segundo cerebro</p>
+  </div>
+  <div class="fotos" aria-label="Fotos de Gaby">
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-1.jpg" alt="Gaby sonriendo con la cabeza inclinada" loading="lazy"></figure>
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-2.jpg" alt="Gaby con la mano en la mejilla" loading="lazy"></figure>
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-3.jpg" alt="Gaby lanzando un beso" loading="lazy"></figure>
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-4.jpg" alt="Gaby sonriendo de lado" loading="lazy"></figure>
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-5.jpg" alt="Gaby mirando a la cámara" loading="lazy"></figure>
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-6.jpg" alt="Gaby mirando hacia un lado" loading="lazy"></figure>
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-7.jpg" alt="Gaby con la mano en el pelo" loading="lazy"></figure>
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-8.jpg" alt="Gaby sonriendo" loading="lazy"></figure>
+    <figure class="polaroid" style="margin:0"><img src="img/gaby-9.jpg" alt="Gaby apoyando la cara en su mano" loading="lazy"></figure>
+  </div>
 </section>
 
 <!-- RECURSOS -->
-<section id="recursos" style="box-sizing: border-box; padding: 96px 24px;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
-<div style="display: flex; flex-direction: column; gap: 10px; max-width: 720px;">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #666B30;">A tu ritmo</span>
-<h2 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05;">Recursos para empezar <span style="font-style: italic; color: #D68C96;">hoy</span></h2>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 24px;">
-<div style="flex: 1 1 340px; background: #F4D9DC; border-radius: 18px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
-<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;">Clase magistral</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.15;">Notion para mentes creativas</h3>
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 30px;">25 USD</span>
-</div>
-<a href="[Tu link de pago]" style="text-decoration: none; background: #541311; color: #F2EEE8; padding: 14px 24px; border-radius: 10px; font-weight: 600; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;">La quiero</a>
-</div>
-<div style="flex: 1 1 340px; background: #D9DBB8; border-radius: 18px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
-<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; color: #3F4220;">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;">Plantilla</span>
-<h3 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.15;">Plantilla de contenido en Notion</h3>
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 30px;">15 USD</span>
-</div>
-<a href="[Tu link de pago]" style="text-decoration: none; background: #541311; color: #F2EEE8; padding: 14px 24px; border-radius: 10px; font-weight: 600; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;">La quiero</a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section style="box-sizing: border-box; padding: 88px 24px; background: #E6DCCD;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
-<div style="display: flex; flex-direction: column; gap: 6px;">
-<span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 30px; color: #666B30;">me encanta demasiado leer esto</span>
-<h2 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05;">Lo que dicen mis <span style="font-style: italic; color: #541311;">clientes</span></h2>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 28px;">
-<figure style="flex: 1 1 300px; margin: 0; background: #FFFDF9; padding: 36px 32px 44px; display: flex; flex-direction: column; gap: 18px; transform: rotate(-1deg); box-shadow: 0 6px 14px rgba(84,19,17,0.12); position: relative; clip-path: polygon(0 0,100% 0,100% 94%,94% 98%,88% 95%,80% 99%,72% 95%,64% 99%,56% 95%,48% 99%,40% 95%,32% 99%,24% 95%,16% 99%,8% 95%,0 98%);">
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #D68C96;" aria-hidden="true">“</span>
-<blockquote style="margin: 0; font-size: 17px;">[Testimonio de tu cliente]</blockquote>
-<figcaption style="font-size: 14px; font-weight: 600;">[Nombre] · [Negocio]</figcaption>
-</figure>
-<figure style="flex: 1 1 300px; margin: 0; background: #FFFDF9; padding: 36px 32px 44px; display: flex; flex-direction: column; gap: 18px; transform: rotate(1deg); box-shadow: 0 6px 14px rgba(84,19,17,0.12); position: relative; clip-path: polygon(0 0,100% 0,100% 94%,94% 98%,88% 95%,80% 99%,72% 95%,64% 99%,56% 95%,48% 99%,40% 95%,32% 99%,24% 95%,16% 99%,8% 95%,0 98%);">
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #D68C96;" aria-hidden="true">“</span>
-<blockquote style="margin: 0; font-size: 17px;">[Testimonio de tu cliente]</blockquote>
-<figcaption style="font-size: 14px; font-weight: 600;">[Nombre] · [Negocio]</figcaption>
-</figure>
-<figure style="flex: 1 1 300px; margin: 0; background: #FFFDF9; padding: 36px 32px 44px; display: flex; flex-direction: column; gap: 18px; transform: rotate(-0.5deg); box-shadow: 0 6px 14px rgba(84,19,17,0.12); position: relative; clip-path: polygon(0 0,100% 0,100% 94%,94% 98%,88% 95%,80% 99%,72% 95%,64% 99%,56% 95%,48% 99%,40% 95%,32% 99%,24% 95%,16% 99%,8% 95%,0 98%);">
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #D68C96;" aria-hidden="true">“</span>
-<blockquote style="margin: 0; font-size: 17px;">[Testimonio de tu cliente]</blockquote>
-<figcaption style="font-size: 14px; font-weight: 600;">[Nombre] · [Negocio]</figcaption>
-</figure>
-</div>
-</div>
+<section class="recursos" id="recursos">
+  <div class="wrap">
+    <div class="recursos__cab">
+      <div><span class="label">A tu ritmo</span><h2 style="margin-top:8px">Recursos para empezar <span class="brillo">hoy</span></h2></div>
+      <p style="max-width:420px;font-size:17px">Si prefieres ordenarte por tu cuenta, empieza con mis plantillas y mi clase de Notion.</p>
+    </div>
+    <div class="recursos__grid">
+      <article class="recurso recurso--rosa">
+        <div class="recurso__img"><img src="img/notion-espacio.jpg" alt="Vista de un espacio de marca en Notion" loading="lazy"></div>
+        <div class="recurso__info">
+          <div><span class="label">Clase magistral</span><h3>Notion para mentes creativas</h3></div>
+          <div style="display:flex;align-items:center;gap:16px"><span class="precio">25 <small>USD</small></span><a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20la%20clase%20Notion%20para%20mentes%20creativas">La quiero</a></div>
+        </div>
+      </article>
+      <article class="recurso recurso--oliva">
+        <div class="recurso__img"><img src="img/notion-calendario.jpg" alt="Vista del calendario de contenido en Notion" loading="lazy"></div>
+        <div class="recurso__info">
+          <div><span class="label">Plantilla</span><h3>Plantilla de contenido en Notion</h3></div>
+          <div style="display:flex;align-items:center;gap:16px"><span class="precio">15 <small>USD</small></span><a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20la%20plantilla%20de%20contenido%20en%20Notion">La quiero</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
 <!-- CTA FINAL -->
-<section style="box-sizing: border-box; padding: 100px 24px; background: #F4D9DC;">
-<div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
-<svg width="72" height="72" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="18" width="92" height="92" rx="24" fill="#541311"></rect><path d="M30 64 L48 82 L80 44" stroke="#D68C96" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 0 Q100 18 118 18 Q100 18 100 36 Q100 18 82 18 Q100 18 100 0Z" fill="#666B30"></path></svg>
-<h2 style="margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(36px, 5vw, 64px); line-height: 1.02;">¿Quieres que tu negocio deje de manejarte la <span style="font-style: italic;">vida</span>?</h2>
-<p style="margin: 0; font-size: 19px; max-width: 620px;">Escríbeme y vemos juntos qué necesita tu negocio para estar en orden.</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px;">
-<a href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20ordenar%20mi%20negocio" style="text-decoration: none; background: #541311; color: #F2EEE8; padding: 18px 32px; border-radius: 10px; font-weight: 600; font-size: 17px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;">Hablemos por WhatsApp</a>
-<span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 30px; color: #666B30;">te leo</span>
-</div>
-</div>
+<section class="final" id="contacto">
+  <div class="wrap">
+    <h2>Ordenemos <span class="mano">tu negocio</span></h2>
+    <div class="final__card">
+      <svg width="54" height="54" aria-hidden="true"><use href="#emblema"/></svg>
+      <h3>¿Quieres que tu negocio deje de manejarte la vida?</h3>
+      <p>Escríbeme y vemos juntos qué necesita tu negocio para estar en orden.</p>
+      <a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20ordenar%20mi%20negocio">Hablemos por WhatsApp</a>
+      <span class="mano" style="font-size:26px;color:var(--oliva);text-align:center">te leo</span>
+    </div>
+  </div>
 </section>
+</main>
 
-<!-- CONTACTO + FOOTER -->
-<footer id="contacto" style="box-sizing: border-box; padding: 72px 24px 40px; background: #541311; color: #F2EEE8;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px;">
-<div style="display: flex; flex-direction: column;">
-<span style="font-weight: 600; font-size: 56px; letter-spacing: -0.04em; line-height: 0.85;">Creando</span>
-<div style="display: flex; align-items: baseline; gap: 8px; margin-left: 44px;">
-<span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 30px; color: #D9DBB8;">con</span>
-<span style="font-family: 'DM Serif Display', Georgia, serif; font-style: italic; font-size: 64px; line-height: 1; color: #D68C96;">Gaaby</span>
-<svg width="18" height="18" viewBox="0 0 32 32" aria-hidden="true" style="align-self: flex-start; margin-top: 10px;"><path d="M16 0 Q16 16 32 16 Q16 16 16 32 Q16 16 0 16 Q16 16 16 0Z" fill="#D9DBB8"></path></svg>
-</div>
-</div>
-<p style="margin: 0; font-size: 17px;">El orden te da libertad.</p>
-</div>
-<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px; font-size: 16px;">
-<h3 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D9DBB8;">Contacto</h3>
-<a href="https://wa.me/573208944328" style="color: #F2EEE8; text-decoration: none; display: flex; flex-direction: column; min-height: 44px;"><span style="font-size: 13px; color: #F4D9DC;">WhatsApp</span><span>+57 320 894 4328</span></a>
-<a href="mailto:creandocongaaby@gmail.com" style="color: #F2EEE8; text-decoration: none; display: flex; flex-direction: column; min-height: 44px;"><span style="font-size: 13px; color: #F4D9DC;">Correo</span><span>creandocongaaby@gmail.com</span></a>
-<a href="https://www.instagram.com/creandocongaaby" style="color: #F2EEE8; text-decoration: none; display: flex; flex-direction: column; min-height: 44px;"><span style="font-size: 13px; color: #F4D9DC;">Instagram</span><span>@creandocongaaby</span></a>
-</div>
-</div>
-<div style="border-top: 1px solid rgba(242,238,232,0.2); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #F4D9DC;">
-<span>© 2026 Creando con Gaaby</span>
-<span>Hecho con orden y muchos brillitos</span>
-</div>
-</div>
+<footer>
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__logo">
+        <b>Creando</b>
+        <span><i>con</i><em>Gaaby</em><svg width="18" height="18" fill="#D9DBB8" aria-hidden="true" style="align-self:flex-start;margin-top:10px"><use href="#brillo"/></svg></span>
+        <p style="margin-top:14px;font-size:17px">El orden te da libertad.</p>
+      </div>
+      <div class="contacto">
+        <span class="label" style="color:var(--oliva-cl)">Contacto</span>
+        <a href="https://wa.me/573208944328"><small>WhatsApp</small><span>+57 320 894 4328</span></a>
+        <a href="mailto:creandocongaaby@gmail.com"><small>Correo</small><span>creandocongaaby@gmail.com</span></a>
+        <a href="https://www.instagram.com/creandocongaaby"><small>Instagram</small><span>@creandocongaaby</span></a>
+      </div>
+    </div>
+    <div class="footer__base"><span>© 2026 Creando con Gaaby</span><span>Hecho con orden y muchos brillitos</span></div>
+  </div>
 </footer>
 
-</div>
+<script>
+(function(){
+  document.querySelectorAll('[data-carrusel]').forEach(function(c){
+    var pista=c.querySelector('.carrusel__pista'), slides=[].slice.call(pista.children), puntos=c.querySelector('[data-puntos]');
+    slides.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ir al ejemplo '+(i+1));b.addEventListener('click',function(){ir(i)});puntos.appendChild(b)});
+    function actual(){return Math.round(pista.scrollLeft/pista.clientWidth)}
+    function ir(i){i=(i+slides.length)%slides.length;pista.scrollTo({left:i*pista.clientWidth,behavior:'smooth'})}
+    function marcar(){var a=actual();[].forEach.call(puntos.children,function(b,i){b.setAttribute('aria-current',i===a?'true':'false')})}
+    c.querySelector('[data-prev]').addEventListener('click',function(){ir(actual()-1)});
+    c.querySelector('[data-next]').addEventListener('click',function(){ir(actual()+1)});
+    pista.addEventListener('scroll',function(){window.requestAnimationFrame(marcar)});
+    marcar();
+  });
+})();
+</script>
 </body>
 </html>
