@@ -28,7 +28,7 @@ const PRODUCTOS = {
   sesion: {
     nombre: 'Sesión 1:1 con Gaby',
     asunto: 'Tu sesión 1:1 está confirmada',
-    enlace: '',
+    enlace: 'https://calendly.com/creandocongaaby/60min',
     boton: 'Elegir mi horario',
     texto: 'Tu sesión está pagada. Ahora elige el día y la hora que mejor te quede.',
   },
