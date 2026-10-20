@@ -101,7 +101,8 @@ module.exports = async (req, res) => {
 
   const d = evento.data || {};
   const referencia = (d.metadata && d.metadata.reference) || '';
-  const id = (referencia.match(/^CCG-([a-z]+)-/) || [])[1];
+  const idOrden = (referencia.match(/^CCG-([a-z]+)-/) || [])[1] || '';
+  const id = idOrden.startsWith('test') ? idOrden.slice(4) : idOrden;
   const p = PRODUCTOS[id];
   if (!p) {
     // Ventas de otras herramientas de Bold (datáfono, links) se ignoran.

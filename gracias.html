@@ -50,7 +50,7 @@ p{margin:0 0 12px;font-size:17px}
   var CALENDLY = 'https://calendly.com/creandocongaaby/60min';
   var WA = 'https://wa.me/573208944328?text=';
   var q = new URLSearchParams(location.search);
-  var producto = q.get('producto') || '';
+  var producto = (q.get('producto') || '').replace(/^test/, '');
   var estado = (q.get('bold-tx-status') || '').toLowerCase();
   var orden = q.get('bold-order-id') || '';
   var nombres = { clase: 'la clase Notion para mentes creativas', plantilla: 'la plantilla de contenido', sesion: 'tu sesión 1:1' };
