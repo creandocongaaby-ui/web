@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prueba de pago</title><meta name="robots" content="noindex, nofollow">
+<script src="https://checkout.bold.co/library/boldPaymentButton.js" defer></script>
+<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#FFF1F6;font-family:Poppins,system-ui,sans-serif;color:#75052F;padding:24px}
+.t{background:#fff;border-radius:20px;padding:32px;max-width:420px;text-align:center;box-shadow:0 14px 30px rgba(117,5,47,.12)}
+a.btn{display:inline-flex;min-height:48px;align-items:center;padding:12px 24px;border-radius:10px;background:#75052F;color:#FEFCF9;font-weight:600;text-decoration:none}
+a.btn[aria-busy="true"]{opacity:.7}</style></head>
+<body><div class="t"><h1 style="font-weight:600;font-size:24px">Prueba de pago</h1>
+<p>Cobro real de 1.000 COP para probar Bold, la página de gracias y el correo automático.</p>
+<a class="btn" data-pagar="prueba" href="/">Pagar 1.000 COP</a></div>
+<script>
+(function(){
+  // Pagos con Bold: pide la firma al servidor y abre la pasarela.
+  // Si algo falla, el botón sigue funcionando como enlace a WhatsApp.
+  document.querySelectorAll('[data-pagar]').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      if(typeof window.BoldCheckout==='undefined') return;
+      e.preventDefault();
+      var producto=btn.getAttribute('data-pagar'), texto=btn.textContent, wa=btn.href;
+      btn.setAttribute('aria-busy','true'); btn.textContent='Abriendo pago...';
+      fetch('/api/bold-firma?producto='+encodeURIComponent(producto),{cache:'no-store'})
+        .then(function(r){ if(!r.ok) throw new Error('sin firma'); return r.json(); })
+        .then(function(d){
+          var checkout=new window.BoldCheckout({
+            orderId:d.orderId, currency:d.currency, amount:d.amount, apiKey:d.apiKey,
+            integritySignature:d.signature, description:d.description,
+            redirectionUrl:location.origin+'/gracias.html?producto='+producto
+          });
+          checkout.open();
+        })
+        .catch(function(){ window.location.href=wa; })
+        .finally(function(){ setTimeout(function(){ btn.removeAttribute('aria-busy'); btn.textContent=texto; },2500); });
+    });
+  });
+})();
+</script></body></html>

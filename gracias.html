@@ -53,7 +53,7 @@ p{margin:0 0 12px;font-size:17px}
   var producto = q.get('producto') || '';
   var estado = (q.get('bold-tx-status') || '').toLowerCase();
   var orden = q.get('bold-order-id') || '';
-  var nombres = { clase: 'la clase Notion para mentes creativas', plantilla: 'la plantilla de contenido', sesion: 'tu sesión 1:1' };
+  var nombres = { clase: 'la clase Notion para mentes creativas', plantilla: 'la plantilla de contenido', sesion: 'tu sesión 1:1', prueba: 'la prueba de pago' };
   var nombre = nombres[producto] || 'tu compra';
   var titulo = document.getElementById('titulo'), texto = document.getElementById('texto'), acciones = document.getElementById('acciones'), saludo = document.getElementById('saludo');
   if (orden) { var o = document.getElementById('orden'); o.textContent = 'Orden: ' + orden; o.hidden = false; }

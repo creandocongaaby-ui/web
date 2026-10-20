@@ -25,6 +25,13 @@ const PRODUCTOS = {
     boton: 'Duplicar mi plantilla',
     texto: 'Ya tienes tu plantilla. Ábrela y toca "Duplicar" para guardarla en tu propio Notion.',
   },
+  prueba: {
+    nombre: 'Prueba de pago',
+    asunto: 'Prueba: así le llega el correo a tus clientes',
+    enlace: 'https://creandocongaaby.com',
+    boton: 'Ver mi acceso',
+    texto: 'Este es un correo de prueba. Así se ve lo que reciben tus clientes después de pagar.',
+  },
   sesion: {
     nombre: 'Sesión 1:1 con Gaby',
     asunto: 'Tu sesión 1:1 está confirmada',
