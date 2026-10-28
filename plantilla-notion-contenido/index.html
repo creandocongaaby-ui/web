@@ -76,6 +76,15 @@ p{margin:0}
   .nav__link{padding:14px 2px;font-size:17px;border-bottom:1px solid rgba(254,206,224,.2)}
   .nav__redes{padding-top:16px}
 }
+.barra-compra{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));z-index:30;transform:translate(-50%,140%);transition:transform .25s ease;display:flex;align-items:center;gap:18px;background:var(--papel);border:2px solid var(--rosa-cl);border-radius:16px;padding:10px 10px 10px 20px;box-shadow:0 12px 30px rgba(78,3,32,.25);width:min(560px,calc(100% - 24px))}
+.barra-compra.visible{transform:translate(-50%,0)}
+.barra-compra__txt{flex:1;display:flex;flex-direction:column;line-height:1.2}
+.barra-compra__txt span{font-size:13px}.barra-compra__txt strong{font-family:var(--serif);font-weight:400;font-size:24px}
+.barra-compra .btn{white-space:nowrap}
+.cta-medio{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:28px;background:var(--vino);color:var(--crema);border-radius:22px;padding:22px 26px}
+.cta-medio .precio{color:var(--crema)}.cta-medio p{margin:4px 0 0;font-size:15px}
+.cta-medio .btn{background:var(--rosa-cl);color:var(--vino);border-color:var(--rosa-cl)}
+@media (max-width:640px){.cta-medio .btn{width:100%}}
 .flotante{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 22px;border-radius:999px;background:var(--vino);color:var(--crema);font-weight:600;font-size:16px;text-decoration:none;box-shadow:0 10px 26px rgba(78,3,32,.35);border:2px solid var(--rosa-cl)}
 .flotante:hover{background:var(--vino-2)}
 
@@ -407,6 +416,7 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
       </article>
     </div>
   </div>
+<div class="wrap"><div class="cta-medio"><div><span class="precio">15 <small>USD</small></span><p>Te llega al correo apenas pagas.</p></div><a class="btn" data-pagar="plantilla" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20la%20plantilla%20de%20contenido%20en%20Notion">Quiero la plantilla</a></div></div>
 </section>
 
 <section class="pl-sec">
@@ -438,8 +448,12 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
   </div>
 </section>
 </main>
+<div class="barra-compra" id="barra-compra" aria-hidden="true">
+  <div class="barra-compra__txt"><span>Plantilla de contenido</span><strong>15 USD</strong></div>
+  <a class="btn" data-pagar="plantilla" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20la%20plantilla%20de%20contenido%20en%20Notion" tabindex="-1">Quiero la plantilla</a>
+</div>
 
-<a class="flotante" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20ordenar%20mi%20negocio"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Hablemos</a>
+
 <footer>
   <div class="wrap">
     <div class="footer__grid">
@@ -462,6 +476,13 @@ footer{background:var(--vino);color:var(--crema);padding:72px 0 36px}
   if(menu){
     menu.addEventListener('click',function(){var a=nav.classList.toggle('abierto');menu.setAttribute('aria-expanded',a?'true':'false');});
     nav.querySelectorAll('.nav__links a').forEach(function(l){l.addEventListener('click',function(){nav.classList.remove('abierto');menu.setAttribute('aria-expanded','false');});});
+  }
+  var barra=document.getElementById('barra-compra'), arriba=document.querySelector('.pl-hero .compra'), cierre=document.querySelector('.pl-cierre');
+  if(barra&&arriba&&'IntersectionObserver' in window){
+    var vis={a:true,c:false};
+    function act(){var on=!vis.a&&!vis.c;barra.classList.toggle('visible',on);barra.setAttribute('aria-hidden',on?'false':'true');barra.querySelector('a').tabIndex=on?0:-1;}
+    new IntersectionObserver(function(e){vis.a=e[0].isIntersecting;act();}).observe(arriba);
+    if(cierre) new IntersectionObserver(function(e){vis.c=e[0].isIntersecting;act();}).observe(cierre);
   }
   // Pagos con Bold: pide la firma al servidor y abre la pasarela.
   // Si algo falla, el botón sigue funcionando como enlace a WhatsApp.
