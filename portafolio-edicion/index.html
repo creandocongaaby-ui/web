@@ -85,6 +85,8 @@ p{margin:0}
 .clip__play::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(117,5,47,0) 55%,rgba(117,5,47,.55))}
 .clip__icono{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;width:64px;height:64px;border-radius:50%;background:var(--rosa-cl);color:var(--vino);display:flex;align-items:center;justify-content:center;padding-left:3px;box-shadow:0 8px 20px rgba(78,3,32,.3);transition:transform .15s ease}
 .clip__play:hover .clip__icono{transform:translate(-50%,-50%) scale(1.08)}
+.clip__marco{position:relative}
+.clip__tapa{position:absolute;top:0;right:0;width:72px;height:72px;z-index:2}
 .clip iframe{display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:12px;background:#000}
 
 /* metodología */
@@ -138,8 +140,8 @@ footer{background:var(--vino-2);color:var(--crema);padding:48px 0 32px}
 <section class="hero">
   <div class="wrap">
     <span class="label">Portafolio de edición</span>
-    <h1>Videos cortos que se ven <span class="brillo">profesionales</span></h1>
-    <p class="lead">Reels y videos para TikTok editados con intención: ritmo, subtítulos y cortes pensados para que la gente se quede hasta el final.</p>
+    <h1>Edición de video con <span class="brillo">estrategia</span> detrás</h1>
+    <p class="lead">Reels y videos para TikTok editados con ritmo, subtítulos y cortes pensados para que la gente se quede hasta el final.</p>
     <div class="hero__ctas">
       <a class="btn" href="#portafolio">Ver los videos</a>
       <a class="btn btn--linea" href="#precios">Ver precios</a>
@@ -164,40 +166,40 @@ footer{background:var(--vino-2);color:var(--crema);padding:48px 0 32px}
     <article class="cliente" data-cliente="vende-como-pro">
       <div class="cliente__cab"><h3>Vende Como Pro</h3></div>
       <div class="videos">
-        <figure class="clip"><button class="clip__play" type="button" data-id="1dhVk3bVTvQileLtNafb7MbD1T8NRkmQb" aria-label="Reproducir: El precio no te dice si conviene" style="background-image:url('https://drive.google.com/thumbnail?id=1dhVk3bVTvQileLtNafb7MbD1T8NRkmQb&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>El precio no te dice si conviene</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1nkou0_ZJ9363IdhOIhbUGqOsEpeInA5J" aria-label="Reproducir: Qué reviso antes de comprar" style="background-image:url('https://drive.google.com/thumbnail?id=1nkou0_ZJ9363IdhOIhbUGqOsEpeInA5J&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Qué reviso antes de comprar</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1T9w4qNwfvvyqcDxOlr7kXelTWPkkwJk4" aria-label="Reproducir: Anuncio · versión de hook A" style="background-image:url('https://drive.google.com/thumbnail?id=1T9w4qNwfvvyqcDxOlr7kXelTWPkkwJk4&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Anuncio · versión de hook A</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1M0Oc7Ukrt_rcXCg2pG6v59hV80NOaIZR" aria-label="Reproducir: Anuncio para webinar" style="background-image:url('https://drive.google.com/thumbnail?id=1M0Oc7Ukrt_rcXCg2pG6v59hV80NOaIZR&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Anuncio para webinar</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1M0Oc7Ukrt_rcXCg2pG6v59hV80NOaIZR" aria-label="Reproducir anuncio del webinar" style="background-image:url('https://drive.google.com/thumbnail?id=1M0Oc7Ukrt_rcXCg2pG6v59hV80NOaIZR&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Anuncio del webinar</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1nnUU211JKpt9_oh5VCNQEFgr8G705ig5" aria-label="Reproducir anuncio del webinar" style="background-image:url('https://drive.google.com/thumbnail?id=1nnUU211JKpt9_oh5VCNQEFgr8G705ig5&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Anuncio del webinar</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1lM2rSxhKXrJo5gCiqmOJb-fC2Ytve3g-" aria-label="Reproducir anuncio del webinar" style="background-image:url('https://drive.google.com/thumbnail?id=1lM2rSxhKXrJo5gCiqmOJb-fC2Ytve3g-&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Anuncio del webinar</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1NGtszee90rzo58BQvj5xr7oI10FBkhGp" aria-label="Reproducir anuncio del webinar" style="background-image:url('https://drive.google.com/thumbnail?id=1NGtszee90rzo58BQvj5xr7oI10FBkhGp&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Anuncio del webinar</figcaption></figure>
       </div>
     </article>
 
     <article class="cliente" data-cliente="estandar">
       <div class="cliente__cab"><h3>Estándar</h3></div>
       <div class="videos">
-        <figure class="clip"><button class="clip__play" type="button" data-id="1jExIgX7rQTEDKsDtIcpNV2hx5zoZ-Mg-" aria-label="Reproducir: Manifiesto de marca" style="background-image:url('https://drive.google.com/thumbnail?id=1jExIgX7rQTEDKsDtIcpNV2hx5zoZ-Mg-&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Manifiesto de marca</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1z--R2EueeyGUTdkiZFZIRXn21EhE_n__" aria-label="Reproducir: Empezar tu cocina" style="background-image:url('https://drive.google.com/thumbnail?id=1z--R2EueeyGUTdkiZFZIRXn21EhE_n__&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Empezar tu cocina</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1a2NmoDyL8V3sb7KQL_F6QfwGbQYeQDL6" aria-label="Reproducir: Cuando el camión llega" style="background-image:url('https://drive.google.com/thumbnail?id=1a2NmoDyL8V3sb7KQL_F6QfwGbQYeQDL6&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Cuando el camión llega</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1a_R6z2NZItuX6OKsFUtvrdWgglsGMmB1" aria-label="Reproducir: Mitos" style="background-image:url('https://drive.google.com/thumbnail?id=1a_R6z2NZItuX6OKsFUtvrdWgglsGMmB1&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Mitos</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1jExIgX7rQTEDKsDtIcpNV2hx5zoZ-Mg-" aria-label="Reproducir: Manifiesto de marca" style="background-image:url('https://drive.google.com/thumbnail?id=1jExIgX7rQTEDKsDtIcpNV2hx5zoZ-Mg-&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Manifiesto de marca</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1z--R2EueeyGUTdkiZFZIRXn21EhE_n__" aria-label="Reproducir: Empezar tu cocina" style="background-image:url('https://drive.google.com/thumbnail?id=1z--R2EueeyGUTdkiZFZIRXn21EhE_n__&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Empezar tu cocina</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1a2NmoDyL8V3sb7KQL_F6QfwGbQYeQDL6" aria-label="Reproducir: Cuando el camión llega" style="background-image:url('https://drive.google.com/thumbnail?id=1a2NmoDyL8V3sb7KQL_F6QfwGbQYeQDL6&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Cuando el camión llega</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1a_R6z2NZItuX6OKsFUtvrdWgglsGMmB1" aria-label="Reproducir: Mitos" style="background-image:url('https://drive.google.com/thumbnail?id=1a_R6z2NZItuX6OKsFUtvrdWgglsGMmB1&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Mitos</figcaption></figure>
       </div>
     </article>
 
     <article class="cliente" data-cliente="lorena">
       <div class="cliente__cab"><h3>Lorena</h3></div>
       <div class="videos">
-        <figure class="clip"><button class="clip__play" type="button" data-id="1ouvlKin676oYB2SSERE5yE8CTxK7T42D" aria-label="Reproducir: Reel promocional" style="background-image:url('https://drive.google.com/thumbnail?id=1ouvlKin676oYB2SSERE5yE8CTxK7T42D&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Reel promocional</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1aRMaPnTgB9slmYTwapimvNpgDh2zVsZV" aria-label="Reproducir: Promo Dr. Carlos" style="background-image:url('https://drive.google.com/thumbnail?id=1aRMaPnTgB9slmYTwapimvNpgDh2zVsZV&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Promo Dr. Carlos</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1i_bc9EEKjtqP2L2i4Ao44w0Eij0_SckQ" aria-label="Reproducir: Oncóloga" style="background-image:url('https://drive.google.com/thumbnail?id=1i_bc9EEKjtqP2L2i4Ao44w0Eij0_SckQ&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Oncóloga</figcaption></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1hS6JkazXUF1gyJdxwJETupgrq5emGEkB" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1hS6JkazXUF1gyJdxwJETupgrq5emGEkB&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1ouvlKin676oYB2SSERE5yE8CTxK7T42D" aria-label="Reproducir: Reel promocional" style="background-image:url('https://drive.google.com/thumbnail?id=1ouvlKin676oYB2SSERE5yE8CTxK7T42D&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Reel promocional</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1aRMaPnTgB9slmYTwapimvNpgDh2zVsZV" aria-label="Reproducir: Promo Dr. Carlos" style="background-image:url('https://drive.google.com/thumbnail?id=1aRMaPnTgB9slmYTwapimvNpgDh2zVsZV&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Promo Dr. Carlos</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1i_bc9EEKjtqP2L2i4Ao44w0Eij0_SckQ" aria-label="Reproducir: Oncóloga" style="background-image:url('https://drive.google.com/thumbnail?id=1i_bc9EEKjtqP2L2i4Ao44w0Eij0_SckQ&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Oncóloga</figcaption></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1hS6JkazXUF1gyJdxwJETupgrq5emGEkB" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1hS6JkazXUF1gyJdxwJETupgrq5emGEkB&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
       </div>
     </article>
 
     <article class="cliente" data-cliente="caro-montes">
       <div class="cliente__cab"><h3>Caro Montes</h3></div>
       <div class="videos">
-        <figure class="clip"><button class="clip__play" type="button" data-id="1eOaBAZTCcyIcW-9JsThaGGWGQ8jtugq1" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1eOaBAZTCcyIcW-9JsThaGGWGQ8jtugq1&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1wnxYCBxUXS62t5shHxGI5HYulmJCn2x3" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1wnxYCBxUXS62t5shHxGI5HYulmJCn2x3&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1zAg7Aiw3Nh8a4zGasKt_GTPVKvyoeYfK" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1zAg7Aiw3Nh8a4zGasKt_GTPVKvyoeYfK&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
-        <figure class="clip"><button class="clip__play" type="button" data-id="1r4z92lnUNFKktwYi6YSMJH_EJmkHu59y" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1r4z92lnUNFKktwYi6YSMJH_EJmkHu59y&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1eOaBAZTCcyIcW-9JsThaGGWGQ8jtugq1" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1eOaBAZTCcyIcW-9JsThaGGWGQ8jtugq1&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1wnxYCBxUXS62t5shHxGI5HYulmJCn2x3" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1wnxYCBxUXS62t5shHxGI5HYulmJCn2x3&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1zAg7Aiw3Nh8a4zGasKt_GTPVKvyoeYfK" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1zAg7Aiw3Nh8a4zGasKt_GTPVKvyoeYfK&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+        <figure class="clip" oncontextmenu="return false"><button class="clip__play" type="button" data-id="1r4z92lnUNFKktwYi6YSMJH_EJmkHu59y" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1r4z92lnUNFKktwYi6YSMJH_EJmkHu59y&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
       </div>
     </article>
   </div>
@@ -273,11 +275,18 @@ footer{background:var(--vino-2);color:var(--crema);padding:48px 0 32px}
   // y deja uno solo abierto a la vez.
   document.querySelectorAll('.clip__play').forEach(function(b){
     b.addEventListener('click',function(){
-      document.querySelectorAll('.clip iframe').forEach(function(f){ f.parentNode.replaceChild(f._boton,f); });
+      document.querySelectorAll('.clip__marco').forEach(function(m){ m.parentNode.replaceChild(m._boton,m); });
       var f=document.createElement('iframe');
       f.src='https://drive.google.com/file/d/'+b.getAttribute('data-id')+'/preview';
       f.allow='autoplay; fullscreen'; f.allowFullscreen=true; f.title=b.getAttribute('aria-label');
-      f._boton=b; b.parentNode.replaceChild(f,b);
+      // Sin permiso para abrir ventanas: el botón de Drive para abrir o descargar no funciona.
+      f.setAttribute('sandbox','allow-scripts allow-same-origin allow-presentation');
+      f.setAttribute('referrerpolicy','no-referrer');
+      var marco=document.createElement('div'); marco.className='clip__marco';
+      var tapa=document.createElement('div'); tapa.className='clip__tapa';
+      tapa.addEventListener('contextmenu',function(e){e.preventDefault();});
+      marco.appendChild(f); marco.appendChild(tapa);
+      marco._boton=b; b.parentNode.replaceChild(marco,b);
     });
   });
 })();
