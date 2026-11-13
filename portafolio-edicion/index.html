@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portafolio de edición de video | Creando con Gaaby</title>
+<meta name="description" content="Videos editados para marcas y creadores: reels y videos cortos listos para publicar. Metodología de trabajo y precios.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portafolio de edición de video | Creando con Gaaby">
+<meta property="og:description" content="Videos cortos editados para marcas y creadores. Mira el trabajo, cómo lo hacemos y cuánto cuesta.">
+<meta property="og:url" content="https://creandocongaaby.com/portafolio-edicion/">
+<meta property="og:image" content="https://creandocongaaby.com/gaby.jpg">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Creando con Gaaby">
+<meta name="theme-color" content="#75052F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+:root{
+  --vino:#75052F; --vino-2:#4E0320; --rosa:#FFA6C8; --rosa-osc:#D97FA3; --rosa-cl:#FECEE0; --rosa-xcl:#FFF1F6;
+  --crema:#FEFCF9; --crema-2:#F3EEE7; --salvia:#D9DBB8; --papel:#FFFFFF;
+  --serif:'DM Serif Display',Georgia,serif; --sans:'Poppins',system-ui,sans-serif; --mano:'Caveat',cursive;
+  --wrap:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--vino);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.05}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.label{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--vino)}
+.mano{font-family:var(--mano);font-weight:700}
+.brillo{font-style:italic;color:var(--vino);background:linear-gradient(transparent 62%,var(--rosa-cl) 62%);padding:0 .08em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:10px;background:var(--vino);color:var(--crema);font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--vino);transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-2px);background:var(--vino-2);color:var(--crema)}
+.btn--linea{background:transparent;color:var(--vino)}
+.btn--linea:hover{background:var(--vino);color:var(--crema)}
+.pill{display:inline-block;border-radius:6px;padding:4px 12px;font-size:14px;font-weight:500;background:var(--rosa-cl)}
+:focus-visible{outline:3px solid var(--rosa);outline-offset:3px;border-radius:6px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--vino);color:var(--crema-2)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.logo{display:block;line-height:0}
+.logo img{height:58px;width:auto}
+.nav__links{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:500}
+.nav__links a{text-decoration:none}
+.nav__links a:not(.btn):hover{color:var(--rosa)}
+.nav .btn{min-height:44px;padding:10px 18px;font-size:15px;background:var(--rosa-cl);color:var(--vino);border-color:var(--rosa-cl)}
+.nav .btn:hover{background:var(--papel);color:var(--vino)}
+@media (max-width:760px){.logo img{height:46px}.nav__link{display:none}}
+
+/* hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{max-width:900px;text-align:center}
+.hero h1{font-size:clamp(42px,6vw,80px);margin-top:12px}
+.hero p.lead{font-size:18px;margin:22px auto 28px;max-width:600px}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.hero .mano{display:block;font-size:26px;margin-top:22px;transform:rotate(-2deg)}
+
+/* secciones */
+.sec{padding:80px 0}
+.sec h2{font-size:clamp(32px,4vw,52px);margin:8px 0 14px}
+.sec__intro{max-width:620px;font-size:17px;margin-bottom:36px}
+.rosa{background:var(--rosa-xcl)}
+
+/* portafolio */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.filtro{min-height:44px;padding:8px 18px;border-radius:999px;border:1.5px solid var(--vino);background:transparent;color:var(--vino);font:500 15px/1 var(--sans);cursor:pointer}
+.filtro[aria-pressed="true"]{background:var(--vino);color:var(--crema)}
+.cliente{margin-bottom:56px}
+.cliente:last-child{margin-bottom:0}
+.cliente__cab{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:18px;padding-bottom:12px;border-bottom:1.5px solid var(--rosa-cl)}
+.cliente__cab h3{font-size:clamp(28px,3vw,38px)}
+.cliente__cab p{font-size:15px}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.clip{margin:0;background:var(--papel);border-radius:18px;padding:10px;box-shadow:0 12px 28px rgba(117,5,47,.12)}
+.clip figcaption{padding:10px 6px 4px;font-size:14px;font-weight:500}
+.clip__play{position:relative;display:block;width:100%;aspect-ratio:9/16;border:0;padding:0;border-radius:12px;background:var(--vino) center/cover no-repeat;cursor:pointer;overflow:hidden}
+.clip__play::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(117,5,47,0) 55%,rgba(117,5,47,.55))}
+.clip__icono{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;width:64px;height:64px;border-radius:50%;background:var(--rosa-cl);color:var(--vino);display:flex;align-items:center;justify-content:center;padding-left:3px;box-shadow:0 8px 20px rgba(78,3,32,.3);transition:transform .15s ease}
+.clip__play:hover .clip__icono{transform:translate(-50%,-50%) scale(1.08)}
+.clip iframe{display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:12px;background:#000}
+
+/* metodología */
+.pasos{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:p}
+.pasos li{counter-increment:p;background:var(--papel);border-radius:18px;padding:24px;border:1.5px solid var(--rosa-cl)}
+.pasos li::before{content:counter(p);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--vino);color:var(--crema);font-family:var(--serif);font-size:22px;margin-bottom:12px}
+.pasos h3{font-size:24px;margin-bottom:6px}.pasos p{font-size:15px}
+
+/* precios */
+.precios{background:var(--vino);color:var(--crema);padding:88px 0}
+.precios h2{color:var(--crema)}
+.precios .label{color:var(--rosa-cl)}
+.precios .brillo{color:var(--rosa);background:none}
+.planes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:880px}
+.plan{background:var(--papel);color:var(--vino);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;position:relative}
+.plan--destacado{border:3px solid var(--rosa)}
+.plan__tag{position:absolute;top:-14px;left:26px;background:var(--rosa);color:var(--vino);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:28px}
+.precio{font-family:var(--serif);font-size:56px;line-height:1}
+.precio small{font-family:var(--sans);font-size:15px;font-weight:500}
+.plan ul{margin:4px 0 8px;padding-left:20px;font-size:15px}
+.plan ul li{margin-bottom:4px}
+.plan .btn{margin-top:auto}
+.precios__nota{margin-top:26px;font-size:15px;color:var(--rosa-cl);max-width:640px}
+@media (max-width:760px){.planes{grid-template-columns:1fr}.sec{padding:60px 0}.hero{padding-top:44px}}
+
+/* footer */
+footer{background:var(--vino-2);color:var(--crema);padding:48px 0 32px}
+.footer__grid{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.footer__logo img{width:220px;height:auto}
+.contacto{display:flex;flex-wrap:wrap;gap:22px;font-size:15px}
+.contacto a{text-decoration:none}.contacto a:hover{text-decoration:underline}
+.footer__base{border-top:1px solid rgba(243,238,231,.2);margin-top:28px;padding-top:18px;font-size:14px;color:var(--rosa-cl)}
+</style>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Creando con Gaaby, inicio"><img src="/img/logo.png" alt="Creando con Gaaby" width="1023" height="447"></a>
+    <nav class="nav__links" aria-label="Portafolio">
+      <a class="nav__link" href="#portafolio">Portafolio</a>
+      <a class="btn" href="#precios">Precios</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="label">Portafolio de edición</span>
+    <h1>Videos cortos que se ven <span class="brillo">profesionales</span></h1>
+    <p class="lead">Reels y videos para TikTok editados con intención: ritmo, subtítulos y cortes pensados para que la gente se quede hasta el final.</p>
+    <div class="hero__ctas">
+      <a class="btn" href="#portafolio">Ver los videos</a>
+      <a class="btn btn--linea" href="#precios">Ver precios</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec rosa" id="portafolio">
+  <div class="wrap">
+    <span class="label">Portafolio</span>
+    <h2>Trabajo <span class="brillo">real</span> de clientes reales</h2>
+    <p class="sec__intro">Toca cualquier video para verlo.</p>
+
+    <div class="filtros" role="group" aria-label="Filtrar por cliente">
+      <button class="filtro" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+      <button class="filtro" type="button" data-filtro="vende-como-pro" aria-pressed="false">Vende Como Pro</button>
+      <button class="filtro" type="button" data-filtro="estandar" aria-pressed="false">Estándar</button>
+      <button class="filtro" type="button" data-filtro="lorena" aria-pressed="false">Lorena</button>
+      <button class="filtro" type="button" data-filtro="caro-montes" aria-pressed="false">Caro Montes</button>
+    </div>
+
+    <article class="cliente" data-cliente="vende-como-pro">
+      <div class="cliente__cab"><h3>Vende Como Pro</h3><p>Alejandro Pérez · academia de Amazon FBA</p></div>
+      <div class="videos">
+        <figure class="clip"><button class="clip__play" type="button" data-id="1dhVk3bVTvQileLtNafb7MbD1T8NRkmQb" aria-label="Reproducir: El precio no te dice si conviene" style="background-image:url('https://drive.google.com/thumbnail?id=1dhVk3bVTvQileLtNafb7MbD1T8NRkmQb&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>El precio no te dice si conviene</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1nkou0_ZJ9363IdhOIhbUGqOsEpeInA5J" aria-label="Reproducir: Qué reviso antes de comprar" style="background-image:url('https://drive.google.com/thumbnail?id=1nkou0_ZJ9363IdhOIhbUGqOsEpeInA5J&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Qué reviso antes de comprar</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1T9w4qNwfvvyqcDxOlr7kXelTWPkkwJk4" aria-label="Reproducir: Anuncio · versión de hook A" style="background-image:url('https://drive.google.com/thumbnail?id=1T9w4qNwfvvyqcDxOlr7kXelTWPkkwJk4&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Anuncio · versión de hook A</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1M0Oc7Ukrt_rcXCg2pG6v59hV80NOaIZR" aria-label="Reproducir: Anuncio para webinar" style="background-image:url('https://drive.google.com/thumbnail?id=1M0Oc7Ukrt_rcXCg2pG6v59hV80NOaIZR&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Anuncio para webinar</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="cliente" data-cliente="estandar">
+      <div class="cliente__cab"><h3>Estándar</h3></div>
+      <div class="videos">
+        <figure class="clip"><button class="clip__play" type="button" data-id="1jExIgX7rQTEDKsDtIcpNV2hx5zoZ-Mg-" aria-label="Reproducir: Manifiesto de marca" style="background-image:url('https://drive.google.com/thumbnail?id=1jExIgX7rQTEDKsDtIcpNV2hx5zoZ-Mg-&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Manifiesto de marca</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1z--R2EueeyGUTdkiZFZIRXn21EhE_n__" aria-label="Reproducir: Empezar tu cocina" style="background-image:url('https://drive.google.com/thumbnail?id=1z--R2EueeyGUTdkiZFZIRXn21EhE_n__&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Empezar tu cocina</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1a2NmoDyL8V3sb7KQL_F6QfwGbQYeQDL6" aria-label="Reproducir: Cuando el camión llega" style="background-image:url('https://drive.google.com/thumbnail?id=1a2NmoDyL8V3sb7KQL_F6QfwGbQYeQDL6&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Cuando el camión llega</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1a_R6z2NZItuX6OKsFUtvrdWgglsGMmB1" aria-label="Reproducir: Mitos" style="background-image:url('https://drive.google.com/thumbnail?id=1a_R6z2NZItuX6OKsFUtvrdWgglsGMmB1&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Mitos</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="cliente" data-cliente="lorena">
+      <div class="cliente__cab"><h3>Lorena</h3></div>
+      <div class="videos">
+        <figure class="clip"><button class="clip__play" type="button" data-id="1ouvlKin676oYB2SSERE5yE8CTxK7T42D" aria-label="Reproducir: Reel promocional" style="background-image:url('https://drive.google.com/thumbnail?id=1ouvlKin676oYB2SSERE5yE8CTxK7T42D&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Reel promocional</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1aRMaPnTgB9slmYTwapimvNpgDh2zVsZV" aria-label="Reproducir: Promo Dr. Carlos" style="background-image:url('https://drive.google.com/thumbnail?id=1aRMaPnTgB9slmYTwapimvNpgDh2zVsZV&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Promo Dr. Carlos</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1i_bc9EEKjtqP2L2i4Ao44w0Eij0_SckQ" aria-label="Reproducir: Oncóloga" style="background-image:url('https://drive.google.com/thumbnail?id=1i_bc9EEKjtqP2L2i4Ao44w0Eij0_SckQ&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>Oncóloga</figcaption></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1hS6JkazXUF1gyJdxwJETupgrq5emGEkB" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1hS6JkazXUF1gyJdxwJETupgrq5emGEkB&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+      </div>
+    </article>
+
+    <article class="cliente" data-cliente="caro-montes">
+      <div class="cliente__cab"><h3>Caro Montes</h3></div>
+      <div class="videos">
+        <figure class="clip"><button class="clip__play" type="button" data-id="1eOaBAZTCcyIcW-9JsThaGGWGQ8jtugq1" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1eOaBAZTCcyIcW-9JsThaGGWGQ8jtugq1&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1wnxYCBxUXS62t5shHxGI5HYulmJCn2x3" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1wnxYCBxUXS62t5shHxGI5HYulmJCn2x3&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1zAg7Aiw3Nh8a4zGasKt_GTPVKvyoeYfK" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1zAg7Aiw3Nh8a4zGasKt_GTPVKvyoeYfK&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+        <figure class="clip"><button class="clip__play" type="button" data-id="1r4z92lnUNFKktwYi6YSMJH_EJmkHu59y" aria-label="Reproducir: Reel" style="background-image:url('https://drive.google.com/thumbnail?id=1r4z92lnUNFKktwYi6YSMJH_EJmkHu59y&amp;sz=w600')"><span class="clip__icono" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- METODOLOGIA: se agrega cuando Gaby envíe sus pasos -->
+
+<section class="precios" id="precios">
+  <div class="wrap">
+    <span class="label">Precios</span>
+    <h2 class="sec__h">Elige cómo <span class="brillo">empezar</span></h2>
+    <p class="sec__intro" style="color:var(--rosa-cl)">Precios en dólares (USD), por video editado.</p>
+    <div class="planes">
+      <div class="plan">
+        <h3>Por unidad</h3>
+        <span class="precio">20 <small>USD por video</small></span>
+        <p>Para probar o para videos puntuales.</p>
+        <a class="btn btn--linea" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20cotizar%20edici%C3%B3n%20de%20videos%20por%20unidad">Quiero editar un video</a>
+      </div>
+      <div class="plan plan--destacado">
+        <span class="plan__tag">Mejor precio</span>
+        <h3>Paquete</h3>
+        <span class="precio">18 <small>USD por video</small></span>
+        <p>Desde 10 videos. El paquete de 10 queda en 180 USD.</p>
+        <a class="btn" href="https://wa.me/573208944328?text=Hola%20Gaby%2C%20quiero%20cotizar%20un%20paquete%20de%20edici%C3%B3n%20de%20videos">Quiero un paquete</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer__grid">
+      <a class="footer__logo" href="/"><img src="/img/logo.png" alt="Creando con Gaaby" width="1023" height="447"></a>
+      <div class="contacto">
+        <a href="https://wa.me/573208944328">WhatsApp</a>
+        <a href="mailto:creandocongaaby@gmail.com">Correo</a>
+        <a href="https://www.instagram.com/creandocongaaby">Instagram</a>
+        <a href="https://www.tiktok.com/@creandocongaaby">TikTok</a>
+      </div>
+    </div>
+    <div class="footer__base">© 2026 Creando con Gaaby</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Filtro por cliente
+  var botones=document.querySelectorAll('.filtro'), clientes=document.querySelectorAll('.cliente');
+  botones.forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.getAttribute('data-filtro');
+      botones.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      clientes.forEach(function(c){c.hidden=!(f==='todos'||c.getAttribute('data-cliente')===f);});
+    });
+  });
+  // Carga el video de Drive solo cuando lo tocan (la página carga rápido)
+  // y deja uno solo abierto a la vez.
+  document.querySelectorAll('.clip__play').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.clip iframe').forEach(function(f){ f.parentNode.replaceChild(f._boton,f); });
+      var f=document.createElement('iframe');
+      f.src='https://drive.google.com/file/d/'+b.getAttribute('data-id')+'/preview';
+      f.allow='autoplay; fullscreen'; f.allowFullscreen=true; f.title=b.getAttribute('aria-label');
+      f._boton=b; b.parentNode.replaceChild(f,b);
+    });
+  });
+})();
+</script>
+</body>
+</html>
